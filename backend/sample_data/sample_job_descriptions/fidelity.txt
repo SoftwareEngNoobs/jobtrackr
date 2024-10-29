@@ -1,0 +1,38 @@
+Fidelity
+The Role
+Fidelity Digital Assets℠, a Fidelity Investments Company, is developing a full-service enterprise-grade platform for storing, trading and servicing digital assets, such as Bitcoin and Ethereum.
+Our goal at FDA’s Core Custody team is to design and build a suite of digital asset services and investment applications to serve the unique and varying needs of institutional investors. As a Software Engineer, you will get the opportunity to develop your skills, collaborate across Fidelity teams and continue to learn in a fun, collaborative, iterative, and rapidly changing environment.
+This is a hands-on role where you will write code for production features. You will work closely with other engineers, a technical lead, and UX design teams to build intuitive and functional user interfaces. Your ideas will improve our products as well as develop your skills, learn new technologies and languages, and continue to learn. We’re looking for highly motivated individuals who work well in a collaborative, iterative, mission critical, and fast-paced environment.
+The Expertise You Have
+You have a passion for technology and can navigate your way across complex and rapidly changing landscapes by staying on top of the latest trends and thrive by sharing knowledge
+Have strong communication skills and technical expertise to influence and participate in meaningful ways to technical discussions
+Are comfortable being a self-starter, who actively challenges the status quo, is curios and not afraid to ask “Why?” and “What if?”
+Are data-driven and can measure, collect, and use data to make decisions.
+Are experienced with the tools of the trade, including Angular, JavaScript, TypeScript, RxJS, HTML, and CSS/SCSS
+Familiar with NgRx, Redux, or other state management patterns
+Have a quality-first mindset and knowledge of modern test frameworks, such as Jest, Playwright, Cypress
+Passionate about customer experience and good UX design
+Experience working with REST APIs
+Experience with automated CI/CD environments
+Basic understanding of core Java technologies
+Preferred experience with AWS or other cloud platforms and containerization technologies such as Docker
+The Skills You Bring
+2+ years of frontend software development experience
+You embrace a customer-oriented mentality and enjoy developing user-friendly web applications that solve real-world problems
+Possess critical thinking skills to build end-to-end solutions
+Passionate and committed to learning new things and developing with the latest technologies and frameworks
+Works well in both a small agile team and independently, having a strong user focus
+Strong analytical, communication, and organizational skills and the ability to discern between competing interests at a given time
+Participate in engineering practices such as code and design reviews, contributing back to the team with solutions that improve developer efficiency or sharing knowledge about new techniques and technologies
+How Your Work Impacts the Organization 
+We believe that diversity of thought, background and experience will foster an inclusive and engaging environment for our employees. This ultimately enables us to deliver a better product for our customers.
+Being technically savvy is only half of the story. We believe that delivering the best possible customer experience requires an artful blend of human ingenuity and technology. While we value smart technologists, we are passionate about our culture that promotes autonomy and leadership at all levels. People who are a great fit with us demonstrate curiosity to learn, are unafraid to break things, roll up their sleeves and take the lead on opportunities, take ownership of their projects, and thrive by sharing knowledge.
+Why Fidelity Digital Assets?
+Fidelity Digital Assets℠ embraces an entrepreneurial culture and startup mindset while serving as one of the most innovative business units within Fidelity Investments. Our global, diverse team of 130+ forward-thinking professionals lead with agility and creativity to build solutions that bridge the gap between traditional institutional investors and their exposure to digital assets. The firm’s tenure and experience across multiple business lines present our employees with unprecedented access to knowledge, technology, and resources that help our team reshape the future of finance.
+#cryptojobs
+Certifications:
+Company Overview
+Fidelity Investments is a privately held company with a mission to strengthen the financial well-being of our clients. We help people invest and plan for their future. We assist companies and non-profit organizations in delivering benefits to their employees. And we provide institutions and independent advisors with investment and technology solutions to help invest their own clients’ money.
+Join Us
+At Fidelity, you’ll find endless opportunities to build a meaningful career that positively impacts peoples’ lives, including yours. You can take advantage of flexible benefits that support you through every stage of your career, empowering you to thrive at work and at home. Honored with a Glassdoor Employees’ Choice Award, we have been recognized by our employees as a top 10 Best Place to Work in 2024. And you don’t need a finance background to succeed at Fidelity—we offer a range of opportunities for learning so you can build the career you’ve always imagined.
+Fidelity’s hybrid working model blends the best of both onsite and offsite work experiences. Working onsite is important for our business strategy and our culture. We also value the benefits that working offsite offers associates. Most hybrid roles require associates to work onsite all business days of every other week in a Fidelity office.
