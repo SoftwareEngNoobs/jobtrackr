@@ -38,6 +38,13 @@ def cv_test(prompt_file, resume_file, job_file, example_files = []):
     except Exception:
         assert False, "Failed test: " + filename
 
+one_shot_examples = ["entry_level_software_engineer.txt"]
+few_shot_examples = [
+    "entry_level_software_engineer.txt", 
+    "experienced_software_engineer.txt", 
+    "junior_software_engineer.txt"
+]
+
 class FlaskTest(unittest.TestCase):
 
     def test_zero_shot_Charles_Lenovo(self):
@@ -56,49 +63,49 @@ class FlaskTest(unittest.TestCase):
         cv_test("cv_zero_shot.txt", "ava_johnson.txt", "apple.txt")
     
     def test_one_shot_Charles_Lenovo(self):
-        cv_test("cv_one_shot.txt", "charles_mcturland.txt", "lenovo.txt")
+        cv_test("cv_one_shot.txt", "charles_mcturland.txt", "lenovo.txt", one_shot_examples)
     
     def test_one_shot_Cynthia_Fidelity(self):
-        cv_test("cv_one_shot.txt", "cynthia_dwayne.txt", "fidelity.txt")
+        cv_test("cv_one_shot.txt", "cynthia_dwayne.txt", "fidelity.txt", one_shot_examples)
     
     def test_one_shot_Ava_RedHat(self):
-        cv_test("cv_one_shot.txt", "ava_johnson.txt", "redhat.txt")
+        cv_test("cv_one_shot.txt", "ava_johnson.txt", "redhat.txt", one_shot_examples)
     
     def test_one_shot_Charles_EpicGames(self):
-        cv_test("cv_one_shot.txt", "charles_mcturland.txt", "epicgames.txt")
+        cv_test("cv_one_shot.txt", "charles_mcturland.txt", "epicgames.txt", one_shot_examples)
     
     def test_one_shot_Ava_Apple(self):
-        cv_test("cv_one_shot.txt", "ava_johnson.txt", "apple.txt")
+        cv_test("cv_one_shot.txt", "ava_johnson.txt", "apple.txt", one_shot_examples)
     
     def test_one_shot_long_Charles_Lenovo(self):
-        cv_test("cv_one_shot_long.txt", "charles_mcturland.txt", "lenovo.txt")
+        cv_test("cv_one_shot_long.txt", "charles_mcturland.txt", "lenovo.txt", one_shot_examples)
     
     def test_one_shot_long_Cynthia_Fidelity(self):
-        cv_test("cv_one_shot_long.txt", "cynthia_dwayne.txt", "fidelity.txt")
+        cv_test("cv_one_shot_long.txt", "cynthia_dwayne.txt", "fidelity.txt", one_shot_examples)
     
     def test_one_shot_long_Ava_RedHat(self):
-        cv_test("cv_one_shot_long.txt", "ava_johnson.txt", "redhat.txt")
+        cv_test("cv_one_shot_long.txt", "ava_johnson.txt", "redhat.txt", one_shot_examples)
     
     def test_one_shot_long_Charles_EpicGames(self):
-        cv_test("cv_one_shot_long.txt", "charles_mcturland.txt", "epicgames.txt")
+        cv_test("cv_one_shot_long.txt", "charles_mcturland.txt", "epicgames.txt", one_shot_examples)
     
     def test_one_shot_long_Ava_Apple(self):
-        cv_test("cv_one_shot_long.txt", "ava_johnson.txt", "apple.txt")
+        cv_test("cv_one_shot_long.txt", "ava_johnson.txt", "apple.txt", one_shot_examples)
     
     def test_few_shot_Charles_Lenovo(self):
-        cv_test("cv_few_shot.txt", "charles_mcturland.txt", "lenovo.txt")
+        cv_test("cv_few_shot.txt", "charles_mcturland.txt", "lenovo.txt", few_shot_examples)
     
     def test_few_shot_Cynthia_Fidelity(self):
-        cv_test("cv_few_shot.txt", "cynthia_dwayne.txt", "fidelity.txt")
+        cv_test("cv_few_shot.txt", "cynthia_dwayne.txt", "fidelity.txt", few_shot_examples)
     
     def test_few_shot_Ava_RedHat(self):
-        cv_test("cv_few_shot.txt", "ava_johnson.txt", "redhat.txt")
+        cv_test("cv_few_shot.txt", "ava_johnson.txt", "redhat.txt", few_shot_examples)
     
     def test_few_shot_Charles_EpicGames(self):
-        cv_test("cv_few_shot.txt", "charles_mcturland.txt", "epicgames.txt")
+        cv_test("cv_few_shot.txt", "charles_mcturland.txt", "epicgames.txt", few_shot_examples)
     
     def test_few_shot_Ava_Apple(self):
-        cv_test("cv_few_shot.txt", "ava_johnson.txt", "apple.txt")
+        cv_test("cv_few_shot.txt", "ava_johnson.txt", "apple.txt", few_shot_examples)
     
 if __name__=="__main__":
     unittest.main()
