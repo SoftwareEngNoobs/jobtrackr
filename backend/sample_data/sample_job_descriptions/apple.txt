@@ -1,0 +1,18 @@
+Apple
+“I believe, if you zoom out into the future, and you look back, and you ask the question, ‘What was Apple’s greatest contribution to mankind?’ it will be about health.” -Tim Cook, 2019 We build the engine that powers every health or fitness application from Apple and our third party developers. We hear from our users that we are helping them live better, get stronger, remember to care for themselves, and even save their lives. We’re doing it while keeping their health data safe, accessible and private, and we’re pushing the technology and health care industries to do the same. If you are looking for a job where you can use and develop your engineering acumen while changing the world for the better, then look no further. We are looking for talented engineers to keep HealthKit - the very heart of everything related to health and fitness on Apple platforms - secure, efficient, and ever-growing. We work with hardware and software teams throughout Apple as well as our developer ecosystem to deliver ever more functionality, deeply integrated with iOS, watchOS and all the rest, all without sacrificing power, performance or privacy.
+
+Description
+
+As a member of the team, you’ll have the opportunity to work cross-functionally to expand the functionality of the Health app and HealthKit framework. We collaborate across Apple feature teams, hardware teams, domain experts like doctors and fitness experts, and our third party developer ecosystem. Our primary responsibilities are delivering new health and fitness features, designing solutions for distributed health data storage, performance, OS integration, and API design and delivery. This position requires a curious and self-motivated engineer with strong technical and communication skills to handle responsibilities including: • Developing innovative solutions for efficiently syncing health data across multiple Apple platforms • Designing and tuning features for use by millions of users on power and performance constrained devices • Designing and delivering comprehensive test suites in collaboration with our quality assurance and engineering teams • Designing logical, scalable, forward-thinking APIs that serve our developers’ needs • Participating in peer review of architecture, API, and individual software changes • Collaborating with and advising other teams across Apple, including Design, Privacy, and Security, as well as domain experts in health and fitness. 
+BS Computer Science or equivalent experience
+Strong foundation in Computer Science fundamentals
+Experience in object-oriented architecture and design
+Understanding of systems-level concepts like multi-threading, interprocess communication, and performance tuning
+Experience delivering libraries, frameworks or APIs
+Knowledge of iOS programming and one or more Apple technologies such as Grand Central Dispatch, CloudKit, or XPC Activity/Services
+Experience with distributed systems design and development
+
+Preferred Qualifications
+Strong communication and collaboration skills
+Ability to work well with all levels of engineers and other teams
+Familiarity with Wellness or Medical concepts

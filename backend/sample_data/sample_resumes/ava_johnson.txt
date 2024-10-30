@@ -1,0 +1,72 @@
+AVA JOHNSON
+Software Engineer | Cloud Solutions | OS Development
+c +1-(234)-555-1234
+@ help@enhancv.com
+• linkedin.com
+• Philadelphia, Pennsylvania
+SUMMARY
+With over 9 years of experience in software engineering, I bring to the table a deep understanding of cloud computing, operating systems, and data structures. My technical expertise includes hands-on experience with AWS, Azure, and Google Cloud. The highlight of my career so far has been leading a team in developing machine learning solutions to optimize search engine algorithms.
+EXPERIENCE
+Senior Software Engineer
+Google
+E 03/2019 - Present Q Mountain View, CA
+﻿﻿Led a 5-person team on a machine learning project to improve search algorithms, achieving a 12% increase in search relevance.
+﻿﻿Automated key deployment workflows for mobile services, decreasing deployment time by 34% and improving code integration frequency.
+﻿﻿Developed a series of security protocols for mobile applications, reducing potential security threats by 20%.
+﻿﻿Pioneered a cross-functional initiative to streamline database management, optimizing data retrieval processes by 15%.
+﻿﻿Enhanced system monitoring tools to track performance metrics, aiding in a 10% reduction in unexpected system outages.
+﻿﻿Initiated a successful collaboration with the UX team to refine user engagement on key applications, boosting user satisfaction by 18%.
+Software Engineer I|
+Microsoft
+# 06/2016 - 02/2019 9 Redmond, WA
+﻿﻿Implemented a new application feature that was adopted by 80% of the user base within the first three months of release.
+﻿﻿Participated in code reviews and paired programming, resulting in a 30% reduction of code defects.
+﻿﻿Optimized database queries in Azure SQL Database, which improved application performance by 25%.
+﻿﻿Contributed to the migration of legacy systems to cloud-based platforms, enhancing system scalability.
+﻿﻿Facilitated a workshop on cloud security best practices, leading to a 15% improvement in team compliance.
+Software Engineer
+8 01/2014 - 05/2016 • Austin, TX
+﻿﻿Developed a custom Oracle database solution for a finance client, increasing data processing speeds by 40%.
+﻿﻿Assisted in the integration of cloud services into existing products, expanding service offerings.
+﻿﻿Engaged in continuous learning initiatives to keep up with the latest in cloud
+﻿﻿Collaborated on a six-month project that cut down system downtime by 12% through enhanced failover techniques.
+EDUCATION
+Master of Science in Computer Science
+Stanford University
+8 01/2012 - 01/2013 0 Stanford, CA
+Bachelor of Science in Computer Science
+Carnegie Mellon University
+# 01/2008 - 01/2012 9 Pittsburgh, PA
+PROJECTS
+Open Source Database Contribution
+Contributed to improving open-source database efficiency, enhancing transaction speeds by 30%.
+github.com/AvaJohnson/database-project
+Cloud Service Monitoring Tool
+Developed a monitoring tool for cloud services to streamline incident response times.
+github.com/AvaJohnson/cloud-monitoring
+ACHIEVEMENTS
+Optimization Expert Award
+Recipient of the 'Optimization Expert Award' at Microsoft for exceptional performance in system efficiency improvements.
+Published Machine Learning Article
+Authored a well-received article on innovative machine learning strategies implemented in search algorithms.
+Spearheaded Security Initiative
+Led a security protocol overhaul that became the company standard at Oracle, significantly minimizing security risks.
+# Cost-Saving Cloud Integration
+Played a key role in a cloud system integration project that cut on-premises infrastructure costs by 25%.
+SKILLS
+Cloud Computing
+AWS
+Azure
+Google Cloud Platform
+Operating Systems
+Data Structures
+COURSES
+Advanced Data Structures and Algorithms
+Specialized course by MIT focusing on complex data structures optimization.
+Certified Cloud Practitioner
+AWS Certification validating cloud expertise to help professionals highlight in-demand skills.
+PASSIONS
++. Cloud Technology Enthusiast
+Eagerly following and participating in advancements in cloud services and platforms.
+www.enhancv.com
+Powered by CY Enhancu
