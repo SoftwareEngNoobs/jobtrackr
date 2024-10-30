@@ -254,4 +254,4 @@ def resume_suggest(resume, job_desc):
             return jsonify({'message': "Successfully Created Resume Suggestions", 'suggestions': response}), 200
 
     except Exception as e:
-        return jsonify({'error': str(e)}), 400
+        return jsonify({'error': "Something went wrong"}), 400
