@@ -15,6 +15,7 @@ import QA from './Components/QA/QA';
 import CoverLetter from './Components/CoverLetter/CoverLetter'
 import config from './config';
 import logo from '../assets/LogoJobTrackr.png';
+import { ResumeSuggestions } from './Components/ResumeSuggestions/ResumeSuggestions';
 
 const { Header, Content } = Layout;
 
@@ -24,6 +25,7 @@ const signedInPages = {
 	'/files': 'Manage Files',
 	'/qa': 'Q & A',
     '/cv': 'Cover Letter',
+	'/suggestions': 'Resume Suggestions'
 };
 
 export default function App() {
@@ -107,6 +109,7 @@ export default function App() {
 						<Route path="/files" element={<ManageFiles />} />
 						<Route path="/qa" element={<QA />} />
                         <Route path="/cv" element={<CoverLetter />} />
+						<Route path="/suggestions" element={<ResumeSuggestions />} />
 						{/* <Route path="/profile" element={<Profile />} /> */}
 						<Route path="*" element={<Navigate to="/home" replace />} />
 					</Routes>
