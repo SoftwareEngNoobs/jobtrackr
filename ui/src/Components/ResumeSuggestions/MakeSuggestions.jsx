@@ -44,13 +44,13 @@ export function MakeSuggestions({isOpen, onClose, updateSuggestions}) {
             updateSuggestions(data.suggestions);
             closeForm();
         })
-        .catch((err) => message.error(err.response.data?.error))
+        .catch(({ err }) => message.error(err.response.data?.error))
         .finally(() => setLoadingDownload(false));
     }
 
     return (
         <Modal
-            title="Make Cover Letter"
+            title="Generate Resume Suggestions"
             open={isOpen}
             onCancel={closeForm}
             width={700}
@@ -82,17 +82,12 @@ export function MakeSuggestions({isOpen, onClose, updateSuggestions}) {
 
             <Form form={form} layout="vertical" requiredMark={false} onFinish={sendRequest}>
                 <Form.Item
-                    label="Context"
-                    name="context">
-                    <Input placeholder="Input Additional Context" disabled={loadingDownload} />
-                </Form.Item>
-                <Form.Item
                     label="Job Description"
                     name="job_desc"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input job description to tailor the Cover Letter!',
+                            message: 'Please input job description to tailor the Suggestions',
                         },
                     ]}
                 >

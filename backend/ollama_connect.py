@@ -251,7 +251,9 @@ def resume_suggest(resume, job_desc):
             ]
             msg = llm.invoke(messages)
             response = msg.content
+            with open("file.txt", "w") as f:
+                f.write(response)
             return jsonify({'message': "Successfully Created Resume Suggestions", 'suggestions': response}), 200
 
     except Exception as e:
-        return jsonify({'error': "Something went wrong"}), 400
+        return jsonify({'error': str(e)}), 400
