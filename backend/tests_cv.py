@@ -48,7 +48,7 @@ def cv_test(self, prompt_file, resume_file, job_file, example_files = []):
     job_desc = import_file(job_desc_path)
 
     # Adjust the System Prompt and Example Files
-    ollama_connect.system_prompt = system_prompt
+    ollama_connect.system_prompt_cv = system_prompt
     ollama_connect.example_files.clear()
     example_files_content = []
     for example in example_files:

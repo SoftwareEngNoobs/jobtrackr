@@ -5,7 +5,7 @@ llm = ChatOllama(
     temperature=0,
 )
 
-system_prompt = """
+system_prompt_cv = """
 You are a helpful assistant that writes a cover letter from a resume and a job description.
 Only respond with the cover letter and nothing else.
 """
@@ -32,7 +32,7 @@ def generate_cv(resume, job_desc, context = ""):
     try:
         if request:
             messages = [
-                ("system",system_prompt,),
+                ("system",system_prompt_cv,),
                 ("human", "Resume: " + resume),
                 ("human", "Additional Requests and Context: " + context),
                 ("human", "Job Description: " + job_desc),
