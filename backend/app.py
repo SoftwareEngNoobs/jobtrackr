@@ -280,6 +280,12 @@ def generate_cv():
         if "file" in req and len(req["file"]) > 0
         else ""
     )
+    if resume == "":
+        resume = (
+            req["resume"]
+            if "resume" in req and len(req["resume"]) > 0
+            else ""
+        )
     job_desc = req["job_desc"] if "job_desc" in req.keys() else ""
     context = (
         req["context"]

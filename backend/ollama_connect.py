@@ -12,7 +12,7 @@ Only respond with the cover letter and nothing else.
 
 example_files = []
 
-def generate_cv(resume, job_desc, context):
+def generate_cv(resume, job_desc, context = ""):
     """
     Generates a cover letter from a resume and a job description.
     ```
