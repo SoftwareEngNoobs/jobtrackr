@@ -40,11 +40,12 @@ export function MakeSuggestions({isOpen, onClose, updateSuggestions}) {
         axios
         .post(`${config.base_url}/resume_suggest`, { ...vals, email: state.email, file: selectedFile })
         .then(({ data }) => {
+            console.log(data);
             message.success(data.message);
             updateSuggestions(data.suggestions);
             closeForm();
         })
-        .catch(({ err }) => message.error(err.response.data?.error))
+        .catch(({ err }) => message.error(""))
         .finally(() => setLoadingDownload(false));
     }
 

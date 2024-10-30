@@ -11,7 +11,7 @@ import { MakeSuggestions } from './MakeSuggestions';
 export function ResumeSuggestions() {
     const [resumeSuggestion, setResumeSuggestion] = useState("");
     const [makeResumeSuggestionOpen, setResumeSuggestionOpen] = useState(false);
-	const { state } = useLocation();
+	
 
 	useEffect(() => {
 		updateResumeSuggestion("");
@@ -37,7 +37,7 @@ export function ResumeSuggestions() {
 				<div className="SubHeader">
 					<div className="flex" />
 					<Button
-						id="generate-cv"
+						id="generate-suggestions"
 						type="primary"
 						size="large"
 						icon={<PlusOutlined />}
@@ -48,7 +48,7 @@ export function ResumeSuggestions() {
                     <MakeSuggestions
                         isOpen={makeResumeSuggestionOpen}
                         onClose={toggleMakeResumeSuggestion}
-                        updateResumeSuggestion={updateResumeSuggestion}
+                        updateSuggestions={updateResumeSuggestion}
                     />
 				</div>
             </div>
