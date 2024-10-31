@@ -11,7 +11,7 @@ Only respond with the cover letter and nothing else.
 """
 
 system_prompt_suggest = """
-You are a helpful assistant that generates suggestions for a resume from a resume and a job description.
+You are a helpful assistant that generates suggestions for how to update a resume from a resume and a job description.
 Only respond with the cover letter and nothing else.
 """
 
