@@ -48,14 +48,14 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
     job_desc = import_file(job_desc_path)
 
     # Adjust the System Prompt and Example Files
-    ollama_connect.system_prompt_cv = system_prompt
+    ollama_connect.system_prompt_suggest = system_prompt
     ollama_connect.example_files.clear()
     example_files_content = []
     for example in example_files:
         example_path = os.path.join("sample_data", "sample_resume_suggestions", example)
         example_content = import_file(example_path)
         example_files_content.append(example_content)
-    ollama_connect.example_files = example_files_content
+    ollama_connect.example_files_suggest = example_files_content
     filename = prompt_file[:-4] + "_" + resume_file[:-4] + "_" + job_file[:-4] + ".txt"
     
     # Send the request
