@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
-<title>backend.files API documentation</title>
+<title>backend.resume_extract_tests API documentation</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -22,7 +22,7 @@ hljs.highlightAll();
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>backend.files</code></h1>
+<h1 class="title">Module <code>backend.resume_extract_tests</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -31,101 +31,109 @@ hljs.highlightAll();
 <section>
 </section>
 <section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="backend.files.delete_file"><code class="name flex">
-<span>def <span class="ident">delete_file</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{ 
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.download_file"><code class="name flex">
-<span>def <span class="ident">download_file</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-    status: 501
-    data: Authorization required
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.get_pdf_info"><code class="name flex">
-<span>def <span class="ident">get_pdf_info</span></span>(<span>file_req_name, Files, email)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Helper function to extract the values from a pdf
-in the AWS S3 bucket.</p></div>
-</dd>
-<dt id="backend.files.upload_file"><code class="name flex">
-<span>def <span class="ident">upload_file</span></span>(<span>UserRecords, Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string,
-    start: string,
-    file: file,
-    end: string,
-    filename: string
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.view_files"><code class="name flex">
-<span>def <span class="ident">view_files</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string  
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-</dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="backend.resume_extract_tests.FlaskTest"><code class="flex name class">
+<span>class <span class="ident">FlaskTest</span></span>
+<span>(</span><span>methodName='runTest')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class whose instances are single test cases.</p>
+<p>By default, the test code itself should be placed in a method named
+'runTest'.</p>
+<p>If the fixture may be used for many test cases, create as
+many test methods as are needed. When instantiating such a TestCase
+subclass, specify in the constructor arguments the name of the test method
+that the instance is to execute.</p>
+<p>Test authors should subclass TestCase for their own tests. Construction
+and deconstruction of the test's environment ('fixture') can be
+implemented by overriding the 'setUp' and 'tearDown' methods respectively.</p>
+<p>If it is necessary to override the <strong>init</strong> method, the base class
+<strong>init</strong> method must always be called. It is important that subclasses
+should not change the signature of their <strong>init</strong> method, since instances
+of the classes are instantiated automatically by parts of the framework
+in order to be run.</p>
+<p>When subclassing TestCase, you can set these attributes:
+* failureException: determines which exception will be raised when
+the instance's assertion methods fail; test methods raising this
+exception will be deemed to have 'failed' rather than 'errored'.
+* longMessage: determines whether long messages (including repr of
+objects used in assert methods) will be printed on failure in <em>addition</em>
+to any explicit message passed.
+* maxDiff: sets the maximum length of a diff in failure messages
+by assert methods using difflib. It is looked up as an instance
+attribute so can be configured by individual tests if required.</p>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FlaskTest(unittest.TestCase):
+    def test_regular(self):
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;John Doe.pdf&#34;)), 
+                         &#34;John\nDoe&#34;)
+    def test_newline(self):
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;NewLine.pdf&#34;)), 
+                         &#34;Henry\nCash\nThis\nis\na\nsecond\nline.&#34;)
+    def test_split(self):
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;split.pdf&#34;)), 
+                         &#34;Henry\nCash\nThis\nis\na\nsecond\nline.\nThis\ntext\nis\nsplit&#34;)
+    def test_complex_footer(self):
+        self.assertTrue(&#34;REFERENCES AVAILABLE UPON REQUEST&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))
+    def test_numbers(self):
+        self.assertTrue(&#34;4.00&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))
+    def test_headers(self):
+        self.assertTrue(&#34;EDUCATION&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="backend.resume_extract_tests.FlaskTest.test_complex_footer"><code class="name flex">
+<span>def <span class="ident">test_complex_footer</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="backend.resume_extract_tests.FlaskTest.test_headers"><code class="name flex">
+<span>def <span class="ident">test_headers</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="backend.resume_extract_tests.FlaskTest.test_newline"><code class="name flex">
+<span>def <span class="ident">test_newline</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="backend.resume_extract_tests.FlaskTest.test_numbers"><code class="name flex">
+<span>def <span class="ident">test_numbers</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="backend.resume_extract_tests.FlaskTest.test_regular"><code class="name flex">
+<span>def <span class="ident">test_regular</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="backend.resume_extract_tests.FlaskTest.test_split"><code class="name flex">
+<span>def <span class="ident">test_split</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -138,13 +146,19 @@ Response:
 <li><code><a title="backend" href="index.html">backend</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="backend.files.delete_file" href="#backend.files.delete_file">delete_file</a></code></li>
-<li><code><a title="backend.files.download_file" href="#backend.files.download_file">download_file</a></code></li>
-<li><code><a title="backend.files.get_pdf_info" href="#backend.files.get_pdf_info">get_pdf_info</a></code></li>
-<li><code><a title="backend.files.upload_file" href="#backend.files.upload_file">upload_file</a></code></li>
-<li><code><a title="backend.files.view_files" href="#backend.files.view_files">view_files</a></code></li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="backend.resume_extract_tests.FlaskTest" href="#backend.resume_extract_tests.FlaskTest">FlaskTest</a></code></h4>
+<ul class="two-column">
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_complex_footer" href="#backend.resume_extract_tests.FlaskTest.test_complex_footer">test_complex_footer</a></code></li>
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_headers" href="#backend.resume_extract_tests.FlaskTest.test_headers">test_headers</a></code></li>
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_newline" href="#backend.resume_extract_tests.FlaskTest.test_newline">test_newline</a></code></li>
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_numbers" href="#backend.resume_extract_tests.FlaskTest.test_numbers">test_numbers</a></code></li>
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_regular" href="#backend.resume_extract_tests.FlaskTest.test_regular">test_regular</a></code></li>
+<li><code><a title="backend.resume_extract_tests.FlaskTest.test_split" href="#backend.resume_extract_tests.FlaskTest.test_split">test_split</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

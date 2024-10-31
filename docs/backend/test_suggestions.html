@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
-<title>backend.files API documentation</title>
+<title>backend.test_suggestions API documentation</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -22,7 +22,7 @@ hljs.highlightAll();
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>backend.files</code></h1>
+<h1 class="title">Module <code>backend.test_suggestions</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -33,99 +33,85 @@ hljs.highlightAll();
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="backend.files.delete_file"><code class="name flex">
-<span>def <span class="ident">delete_file</span></span>(<span>Files)</span>
+<dt id="backend.test_suggestions.export_file"><code class="name flex">
+<span>def <span class="ident">export_file</span></span>(<span>path, content)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
-{ 
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
+<div class="desc"></div>
 </dd>
-<dt id="backend.files.download_file"><code class="name flex">
-<span>def <span class="ident">download_file</span></span>(<span>Files)</span>
+<dt id="backend.test_suggestions.import_file"><code class="name flex">
+<span>def <span class="ident">import_file</span></span>(<span>path)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
-{
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-    status: 501
-    data: Authorization required
-
-}
-</code></pre></div>
+<div class="desc"></div>
 </dd>
-<dt id="backend.files.get_pdf_info"><code class="name flex">
-<span>def <span class="ident">get_pdf_info</span></span>(<span>file_req_name, Files, email)</span>
+<dt id="backend.test_suggestions.suggestions_test"><code class="name flex">
+<span>def <span class="ident">suggestions_test</span></span>(<span>self, prompt_file, resume_file, job_file, example_files=[])</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Helper function to extract the values from a pdf
-in the AWS S3 bucket.</p></div>
-</dd>
-<dt id="backend.files.upload_file"><code class="name flex">
-<span>def <span class="ident">upload_file</span></span>(<span>UserRecords, Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string,
-    start: string,
-    file: file,
-    end: string,
-    filename: string
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.view_files"><code class="name flex">
-<span>def <span class="ident">view_files</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string  
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="backend.test_suggestions.FlaskTest"><code class="flex name class">
+<span>class <span class="ident">FlaskTest</span></span>
+<span>(</span><span>methodName='runTest')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class whose instances are single test cases.</p>
+<p>By default, the test code itself should be placed in a method named
+'runTest'.</p>
+<p>If the fixture may be used for many test cases, create as
+many test methods as are needed. When instantiating such a TestCase
+subclass, specify in the constructor arguments the name of the test method
+that the instance is to execute.</p>
+<p>Test authors should subclass TestCase for their own tests. Construction
+and deconstruction of the test's environment ('fixture') can be
+implemented by overriding the 'setUp' and 'tearDown' methods respectively.</p>
+<p>If it is necessary to override the <strong>init</strong> method, the base class
+<strong>init</strong> method must always be called. It is important that subclasses
+should not change the signature of their <strong>init</strong> method, since instances
+of the classes are instantiated automatically by parts of the framework
+in order to be run.</p>
+<p>When subclassing TestCase, you can set these attributes:
+* failureException: determines which exception will be raised when
+the instance's assertion methods fail; test methods raising this
+exception will be deemed to have 'failed' rather than 'errored'.
+* longMessage: determines whether long messages (including repr of
+objects used in assert methods) will be printed on failure in <em>addition</em>
+to any explicit message passed.
+* maxDiff: sets the maximum length of a diff in failure messages
+by assert methods using difflib. It is looked up as an instance
+attribute so can be configured by individual tests if required.</p>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FlaskTest(unittest.TestCase):
+    def test_zero_shot_Charles_Lenovo(self):
+        suggestions_test(self, )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="backend.test_suggestions.FlaskTest.test_zero_shot_Charles_Lenovo"><code class="name flex">
+<span>def <span class="ident">test_zero_shot_Charles_Lenovo</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -140,11 +126,19 @@ Response:
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="backend.files.delete_file" href="#backend.files.delete_file">delete_file</a></code></li>
-<li><code><a title="backend.files.download_file" href="#backend.files.download_file">download_file</a></code></li>
-<li><code><a title="backend.files.get_pdf_info" href="#backend.files.get_pdf_info">get_pdf_info</a></code></li>
-<li><code><a title="backend.files.upload_file" href="#backend.files.upload_file">upload_file</a></code></li>
-<li><code><a title="backend.files.view_files" href="#backend.files.view_files">view_files</a></code></li>
+<li><code><a title="backend.test_suggestions.export_file" href="#backend.test_suggestions.export_file">export_file</a></code></li>
+<li><code><a title="backend.test_suggestions.import_file" href="#backend.test_suggestions.import_file">import_file</a></code></li>
+<li><code><a title="backend.test_suggestions.suggestions_test" href="#backend.test_suggestions.suggestions_test">suggestions_test</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="backend.test_suggestions.FlaskTest" href="#backend.test_suggestions.FlaskTest">FlaskTest</a></code></h4>
+<ul class="">
+<li><code><a title="backend.test_suggestions.FlaskTest.test_zero_shot_Charles_Lenovo" href="#backend.test_suggestions.FlaskTest.test_zero_shot_Charles_Lenovo">test_zero_shot_Charles_Lenovo</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

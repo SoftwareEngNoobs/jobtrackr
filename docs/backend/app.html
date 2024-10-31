@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.10.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
 <title>backend.app API documentation</title>
-<meta name="description" content="" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
 </head>
 <body>
 <main>
@@ -22,285 +25,6 @@
 <h1 class="title">Module <code>backend.app</code></h1>
 </header>
 <section id="section-intro">
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">from flask import Flask, request, after_this_request
-from pymongo import MongoClient
-from flask_cors import CORS
-import auth
-import applications
-import questions
-import files
-import os
-app = Flask(__name__)
-app.secret_key = &#34;testing&#34;
-app.config[&#39;CORS_HEADERS&#39;] = &#39;Content-Type&#39;
-CORS(app)
-
-db1 = &#34;mongodb+srv://mongo:yWXYQRPzPLGeE1AX@cluster0.cp3anun.mongodb.net/&#34;
-db2 = &#34;?retryWrites=true&amp;w=majority&#34;
-db = db1 + db2
-client = MongoClient(db, tlsAllowInvalidCertificates=True)
-db = client.get_database(&#34;development&#34;)
-UserRecords = db.register
-Applications = db.Applications
-UserProfiles = db.Profiles
-Questions = db.QA
-Files = db.file
-
-
-@app.route(&#34;/&#34;)
-def hello():
-
-    &#39;&#39;&#39;
-    ```
-    Welcome Page
-    ```
-    &#39;&#39;&#39;
-
-    return &#34;Hello, Track your job on :3000&#34;
-
-
-@app.route(&#34;/register&#34;, methods=[&#34;post&#34;])
-def register():
-
-    &#39;&#39;&#39;
-    ```
-    Register if you do not already have an account
-    ```
-    &#39;&#39;&#39;
-
-    return auth.register(UserRecords)
-
-
-@app.route(&#34;/login&#34;, methods=[&#34;POST&#34;])
-def login():
-
-    &#39;&#39;&#39;
-    ```
-    Login to get to the dashboard to access various functions
-    ```
-    &#39;&#39;&#39;
-
-    return auth.login(UserRecords)
-
-
-@app.route(&#34;/logout&#34;, methods=[&#34;POST&#34;, &#34;GET&#34;])
-def logout():
-
-    &#39;&#39;&#39;
-    ```
-    Log out of your account
-    ```
-    &#39;&#39;&#39;
-
-    return auth.logout()
-
-
-@app.route(&#34;/view_applications&#34;, methods=[&#34;GET&#34;])
-def view_applications():
-
-    &#39;&#39;&#39;
-    ```
-    View applications associated with the selected email ID
-    ```
-    &#39;&#39;&#39;
-
-    return applications.view_applications(Applications)
-
-
-@app.route(&#34;/view_questions&#34;, methods=[&#34;GET&#34;])
-def view_questions():
-
-    &#39;&#39;&#39;
-    ```
-    View questions associated with the selected email ID
-    ```
-    &#39;&#39;&#39;
-
-    return questions.view_questions(Questions)
-
-
-@app.route(&#34;/add_application&#34;, methods=[&#34;POST&#34;])
-def add_application():
-
-    &#39;&#39;&#39;
-    ```
-    Add application to an account with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.add_application(Applications)
-
-
-@app.route(&#34;/add_question&#34;, methods=[&#34;POST&#34;])
-def add_question():
-
-    &#39;&#39;&#39;
-    ```
-    Add question to a profile with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.add_question(Questions)
-
-
-@app.route(&#34;/delete_application&#34;, methods=[&#34;POST&#34;])
-def delete_application():
-
-    &#39;&#39;&#39;
-    ```
-    Delete application associated with selected email.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.delete_application(Applications)
-
-
-@app.route(&#34;/delete_question&#34;, methods=[&#34;POST&#34;])
-def delete_question():
-
-    &#39;&#39;&#39;
-    ```
-    Delete question to a profile with selected email.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.delete_question(Questions)
-
-
-@app.route(&#34;/modify_application&#34;, methods=[&#34;POST&#34;])
-def modify_application():
-
-    &#39;&#39;&#39;
-    ```
-    Modify application.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.modify_application(Applications)
-
-
-@app.route(&#34;/modify_question&#34;, methods=[&#34;POST&#34;])
-def modify_question():
-
-    &#39;&#39;&#39;
-    ```
-    Modify question to a profile with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.modify_question(Questions)
-
-
-@app.route(&#34;/create_profile&#34;, methods=[&#34;post&#34;])
-def create_profile():
-
-    &#39;&#39;&#39;
-    ```
-    Creating profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.create_profile(UserProfiles)
-
-
-@app.route(&#34;/view_profile&#34;, methods=[&#34;GET&#34;])
-def view_profile():
-
-    &#39;&#39;&#39;
-    ```
-    View profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.view_profile(UserProfiles)
-
-
-@app.route(&#34;/modify_profile&#34;, methods=[&#34;POST&#34;])
-def modify_profile():
-
-    &#39;&#39;&#39;
-    ```
-    Modify profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.modify_profile(UserProfiles)
-
-
-@app.route(&#34;/clear_profile&#34;, methods=[&#34;POST&#34;])
-def clear_profile():
-
-    &#39;&#39;&#39;
-    ```
-    View profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.clear_profile(UserProfiles, UserRecords)
-
-
-@app.route(&#34;/upload_file&#34;, methods=[&#34;GET&#34;, &#34;POST&#34;])
-def upload_file():
-
-    &#39;&#39;&#39;
-    ```
-    Uploads file to Amazon S3 bucket
-    ```
-    &#39;&#39;&#39;
-
-    return files.upload_file(UserRecords, Files)
-
-
-@app.route(&#34;/view_files&#34;, methods=[&#34;GET&#34;])
-def view_files():
-
-    &#39;&#39;&#39;
-    ```
-    View your files directly from cloud
-    ```
-    &#39;&#39;&#39;
-
-    return files.view_files(Files)
-
-
-@app.route(&#34;/download_file&#34;, methods=[&#34;POST&#34;])
-def download_file():
-
-    &#39;&#39;&#39;
-    ```
-    View your files directly from cloud
-    ```
-    &#39;&#39;&#39;
-
-    @after_this_request
-    def delete(response):
-        try:
-            os.remove(request.get_json()[&#34;filename&#34;].split(&#34;--;--&#34;)[1])
-        except Exception:
-            pass
-        return response
-    return files.download_file(Files)
-
-
-@app.route(&#34;/delete_file&#34;, methods=[&#34;POST&#34;])
-def delete_file():
-
-    &#39;&#39;&#39;
-    ```
-    Delete one&#39;s files from cloud storage
-    ```
-    &#39;&#39;&#39;
-
-    return files.delete_file(Files)
-
-
-if __name__ == &#34;__main__&#34;:
-    app.run(debug=True, host=&#34;0.0.0.0&#34;, port=8000)</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -315,21 +39,6 @@ if __name__ == &#34;__main__&#34;:
 <dd>
 <div class="desc"><pre><code>Add application to an account with selected email ID.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/add_application&#34;, methods=[&#34;POST&#34;])
-def add_application():
-
-    &#39;&#39;&#39;
-    ```
-    Add application to an account with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.add_application(Applications)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.add_question"><code class="name flex">
 <span>def <span class="ident">add_question</span></span>(<span>)</span>
@@ -337,21 +46,6 @@ def add_application():
 <dd>
 <div class="desc"><pre><code>Add question to a profile with selected email ID.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/add_question&#34;, methods=[&#34;POST&#34;])
-def add_question():
-
-    &#39;&#39;&#39;
-    ```
-    Add question to a profile with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.add_question(Questions)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.clear_profile"><code class="name flex">
 <span>def <span class="ident">clear_profile</span></span>(<span>)</span>
@@ -359,21 +53,6 @@ def add_question():
 <dd>
 <div class="desc"><pre><code>View profile
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/clear_profile&#34;, methods=[&#34;POST&#34;])
-def clear_profile():
-
-    &#39;&#39;&#39;
-    ```
-    View profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.clear_profile(UserProfiles, UserRecords)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.create_profile"><code class="name flex">
 <span>def <span class="ident">create_profile</span></span>(<span>)</span>
@@ -381,21 +60,6 @@ def clear_profile():
 <dd>
 <div class="desc"><pre><code>Creating profile
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/create_profile&#34;, methods=[&#34;post&#34;])
-def create_profile():
-
-    &#39;&#39;&#39;
-    ```
-    Creating profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.create_profile(UserProfiles)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.delete_application"><code class="name flex">
 <span>def <span class="ident">delete_application</span></span>(<span>)</span>
@@ -403,21 +67,6 @@ def create_profile():
 <dd>
 <div class="desc"><pre><code>Delete application associated with selected email.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/delete_application&#34;, methods=[&#34;POST&#34;])
-def delete_application():
-
-    &#39;&#39;&#39;
-    ```
-    Delete application associated with selected email.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.delete_application(Applications)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.delete_file"><code class="name flex">
 <span>def <span class="ident">delete_file</span></span>(<span>)</span>
@@ -425,21 +74,6 @@ def delete_application():
 <dd>
 <div class="desc"><pre><code>Delete one's files from cloud storage
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/delete_file&#34;, methods=[&#34;POST&#34;])
-def delete_file():
-
-    &#39;&#39;&#39;
-    ```
-    Delete one&#39;s files from cloud storage
-    ```
-    &#39;&#39;&#39;
-
-    return files.delete_file(Files)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.delete_question"><code class="name flex">
 <span>def <span class="ident">delete_question</span></span>(<span>)</span>
@@ -447,21 +81,6 @@ def delete_file():
 <dd>
 <div class="desc"><pre><code>Delete question to a profile with selected email.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/delete_question&#34;, methods=[&#34;POST&#34;])
-def delete_question():
-
-    &#39;&#39;&#39;
-    ```
-    Delete question to a profile with selected email.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.delete_question(Questions)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.download_file"><code class="name flex">
 <span>def <span class="ident">download_file</span></span>(<span>)</span>
@@ -469,28 +88,13 @@ def delete_question():
 <dd>
 <div class="desc"><pre><code>View your files directly from cloud
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/download_file&#34;, methods=[&#34;POST&#34;])
-def download_file():
-
-    &#39;&#39;&#39;
-    ```
-    View your files directly from cloud
-    ```
-    &#39;&#39;&#39;
-
-    @after_this_request
-    def delete(response):
-        try:
-            os.remove(request.get_json()[&#34;filename&#34;].split(&#34;--;--&#34;)[1])
-        except Exception:
-            pass
-        return response
-    return files.download_file(Files)</code></pre>
-</details>
+</dd>
+<dt id="backend.app.generate_cv"><code class="name flex">
+<span>def <span class="ident">generate_cv</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>Generates a Cover Letter from a resume and job description
+</code></pre></div>
 </dd>
 <dt id="backend.app.hello"><code class="name flex">
 <span>def <span class="ident">hello</span></span>(<span>)</span>
@@ -498,21 +102,6 @@ def download_file():
 <dd>
 <div class="desc"><pre><code>Welcome Page
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/&#34;)
-def hello():
-
-    &#39;&#39;&#39;
-    ```
-    Welcome Page
-    ```
-    &#39;&#39;&#39;
-
-    return &#34;Hello, Track your job on :3000&#34;</code></pre>
-</details>
 </dd>
 <dt id="backend.app.login"><code class="name flex">
 <span>def <span class="ident">login</span></span>(<span>)</span>
@@ -520,21 +109,6 @@ def hello():
 <dd>
 <div class="desc"><pre><code>Login to get to the dashboard to access various functions
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/login&#34;, methods=[&#34;POST&#34;])
-def login():
-
-    &#39;&#39;&#39;
-    ```
-    Login to get to the dashboard to access various functions
-    ```
-    &#39;&#39;&#39;
-
-    return auth.login(UserRecords)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.logout"><code class="name flex">
 <span>def <span class="ident">logout</span></span>(<span>)</span>
@@ -542,21 +116,6 @@ def login():
 <dd>
 <div class="desc"><pre><code>Log out of your account
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/logout&#34;, methods=[&#34;POST&#34;, &#34;GET&#34;])
-def logout():
-
-    &#39;&#39;&#39;
-    ```
-    Log out of your account
-    ```
-    &#39;&#39;&#39;
-
-    return auth.logout()</code></pre>
-</details>
 </dd>
 <dt id="backend.app.modify_application"><code class="name flex">
 <span>def <span class="ident">modify_application</span></span>(<span>)</span>
@@ -564,21 +123,6 @@ def logout():
 <dd>
 <div class="desc"><pre><code>Modify application.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/modify_application&#34;, methods=[&#34;POST&#34;])
-def modify_application():
-
-    &#39;&#39;&#39;
-    ```
-    Modify application.
-    ```
-    &#39;&#39;&#39;
-
-    return applications.modify_application(Applications)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.modify_profile"><code class="name flex">
 <span>def <span class="ident">modify_profile</span></span>(<span>)</span>
@@ -586,21 +130,6 @@ def modify_application():
 <dd>
 <div class="desc"><pre><code>Modify profile
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/modify_profile&#34;, methods=[&#34;POST&#34;])
-def modify_profile():
-
-    &#39;&#39;&#39;
-    ```
-    Modify profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.modify_profile(UserProfiles)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.modify_question"><code class="name flex">
 <span>def <span class="ident">modify_question</span></span>(<span>)</span>
@@ -608,21 +137,6 @@ def modify_profile():
 <dd>
 <div class="desc"><pre><code>Modify question to a profile with selected email ID.
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/modify_question&#34;, methods=[&#34;POST&#34;])
-def modify_question():
-
-    &#39;&#39;&#39;
-    ```
-    Modify question to a profile with selected email ID.
-    ```
-    &#39;&#39;&#39;
-
-    return questions.modify_question(Questions)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.register"><code class="name flex">
 <span>def <span class="ident">register</span></span>(<span>)</span>
@@ -630,21 +144,13 @@ def modify_question():
 <dd>
 <div class="desc"><pre><code>Register if you do not already have an account
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/register&#34;, methods=[&#34;post&#34;])
-def register():
-
-    &#39;&#39;&#39;
-    ```
-    Register if you do not already have an account
-    ```
-    &#39;&#39;&#39;
-
-    return auth.register(UserRecords)</code></pre>
-</details>
+</dd>
+<dt id="backend.app.resume_suggest"><code class="name flex">
+<span>def <span class="ident">resume_suggest</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>Provides suggestions for a resume to tailor it to a job description
+</code></pre></div>
 </dd>
 <dt id="backend.app.upload_file"><code class="name flex">
 <span>def <span class="ident">upload_file</span></span>(<span>)</span>
@@ -652,21 +158,6 @@ def register():
 <dd>
 <div class="desc"><pre><code>Uploads file to Amazon S3 bucket
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/upload_file&#34;, methods=[&#34;GET&#34;, &#34;POST&#34;])
-def upload_file():
-
-    &#39;&#39;&#39;
-    ```
-    Uploads file to Amazon S3 bucket
-    ```
-    &#39;&#39;&#39;
-
-    return files.upload_file(UserRecords, Files)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.view_applications"><code class="name flex">
 <span>def <span class="ident">view_applications</span></span>(<span>)</span>
@@ -674,21 +165,6 @@ def upload_file():
 <dd>
 <div class="desc"><pre><code>View applications associated with the selected email ID
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/view_applications&#34;, methods=[&#34;GET&#34;])
-def view_applications():
-
-    &#39;&#39;&#39;
-    ```
-    View applications associated with the selected email ID
-    ```
-    &#39;&#39;&#39;
-
-    return applications.view_applications(Applications)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.view_files"><code class="name flex">
 <span>def <span class="ident">view_files</span></span>(<span>)</span>
@@ -696,21 +172,6 @@ def view_applications():
 <dd>
 <div class="desc"><pre><code>View your files directly from cloud
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/view_files&#34;, methods=[&#34;GET&#34;])
-def view_files():
-
-    &#39;&#39;&#39;
-    ```
-    View your files directly from cloud
-    ```
-    &#39;&#39;&#39;
-
-    return files.view_files(Files)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.view_profile"><code class="name flex">
 <span>def <span class="ident">view_profile</span></span>(<span>)</span>
@@ -718,21 +179,6 @@ def view_files():
 <dd>
 <div class="desc"><pre><code>View profile
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/view_profile&#34;, methods=[&#34;GET&#34;])
-def view_profile():
-
-    &#39;&#39;&#39;
-    ```
-    View profile
-    ```
-    &#39;&#39;&#39;
-
-    return auth.view_profile(UserProfiles)</code></pre>
-</details>
 </dd>
 <dt id="backend.app.view_questions"><code class="name flex">
 <span>def <span class="ident">view_questions</span></span>(<span>)</span>
@@ -740,21 +186,6 @@ def view_profile():
 <dd>
 <div class="desc"><pre><code>View questions associated with the selected email ID
 </code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@app.route(&#34;/view_questions&#34;, methods=[&#34;GET&#34;])
-def view_questions():
-
-    &#39;&#39;&#39;
-    ```
-    View questions associated with the selected email ID
-    ```
-    &#39;&#39;&#39;
-
-    return questions.view_questions(Questions)</code></pre>
-</details>
 </dd>
 </dl>
 </section>
@@ -762,7 +193,6 @@ def view_questions():
 </section>
 </article>
 <nav id="sidebar">
-<h1>Index</h1>
 <div class="toc">
 <ul></ul>
 </div>
@@ -782,6 +212,7 @@ def view_questions():
 <li><code><a title="backend.app.delete_file" href="#backend.app.delete_file">delete_file</a></code></li>
 <li><code><a title="backend.app.delete_question" href="#backend.app.delete_question">delete_question</a></code></li>
 <li><code><a title="backend.app.download_file" href="#backend.app.download_file">download_file</a></code></li>
+<li><code><a title="backend.app.generate_cv" href="#backend.app.generate_cv">generate_cv</a></code></li>
 <li><code><a title="backend.app.hello" href="#backend.app.hello">hello</a></code></li>
 <li><code><a title="backend.app.login" href="#backend.app.login">login</a></code></li>
 <li><code><a title="backend.app.logout" href="#backend.app.logout">logout</a></code></li>
@@ -789,6 +220,7 @@ def view_questions():
 <li><code><a title="backend.app.modify_profile" href="#backend.app.modify_profile">modify_profile</a></code></li>
 <li><code><a title="backend.app.modify_question" href="#backend.app.modify_question">modify_question</a></code></li>
 <li><code><a title="backend.app.register" href="#backend.app.register">register</a></code></li>
+<li><code><a title="backend.app.resume_suggest" href="#backend.app.resume_suggest">resume_suggest</a></code></li>
 <li><code><a title="backend.app.upload_file" href="#backend.app.upload_file">upload_file</a></code></li>
 <li><code><a title="backend.app.view_applications" href="#backend.app.view_applications">view_applications</a></code></li>
 <li><code><a title="backend.app.view_files" href="#backend.app.view_files">view_files</a></code></li>
@@ -800,7 +232,7 @@ def view_questions():
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
 </footer>
 </body>
 </html>
