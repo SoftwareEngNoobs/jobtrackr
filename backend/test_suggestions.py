@@ -37,7 +37,7 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
     # Set up the flask client
     tester = app.test_client(self)
     email = "dhrumilshah1234@gmail.com"
-    urlToSend = f"/suggestions"
+    urlToSend = f"/resume_suggest"
     
     # Read in the sample data files
     prompt_path = os.path.join("sample_data", "system_prompts", prompt_file)
