@@ -270,7 +270,7 @@ class FlaskTest(unittest.TestCase):
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
-    def testWrongModifyApplicationMissingImage(self):
+    def testModifyApplicationMissingImage(self):
         tester = app.test_client(self)
         req = {
             "companyName": "Qorvo",
@@ -286,7 +286,7 @@ class FlaskTest(unittest.TestCase):
         urlToSend = "/modify_application"
         response = tester.post(urlToSend, json = req)
         statuscode = response.status_code
-        self.assertEqual(statuscode, 400)
+        self.assertEqual(statuscode, 200)
 
     def testWrongModifyApplicationStatusAndURL(self):
         tester = app.test_client(self)

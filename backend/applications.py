@@ -157,13 +157,22 @@ def modify_application(Applications):
     }
     ```
     '''
-
+    validStatuses = [
+        "applied",
+        "inReview",
+        "interview",
+        "accepted",
+        "rejected"
+    ]
     if request:
         try:
             req = request.get_json()
             email = req["email"]
             _id = req["_id"]
             filter = {'_id': ObjectId(_id), "email": email}
+            status = req["status"]
+            if status not in validStatuses:
+                return jsonify({"error": "Incorrect Status Type"}), 400
             application = {
                 "email": email,
                 "companyName": req["companyName"],
