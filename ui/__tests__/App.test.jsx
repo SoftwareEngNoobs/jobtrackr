@@ -144,7 +144,7 @@ describe('App', () => {
 		await user.click(date);
 		await user.click(getByClass(baseElement, 'ant-picker-today-btn'));
 
-		await user.click(getByClass(baseElement, 'image'));
+		await user.type(getByClass(baseElement, 'image'), 'www.google.com');
 		await user.click(getByClass(baseElement, 'ant-select-selector')); // <-- Fails here
 		await user.click(getByTitle(baseElement, 'Applied'));
 
