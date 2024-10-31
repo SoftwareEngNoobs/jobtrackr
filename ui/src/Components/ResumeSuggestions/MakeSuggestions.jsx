@@ -21,7 +21,7 @@ export function MakeSuggestions({isOpen, onClose, updateSuggestions}) {
         setLoadingDownload(true);
         axios
         .get(`${config.base_url}/view_files?email=` + state.email)
-			.then(({ data }) => setFiles(data.files))
+			.then(({ data }) =>  data.files ? setFiles(data.files) : setFiles([]))
 			.catch((err) => console.log(err))
             .finally(() => setLoadingDownload(false));
     };
