@@ -21,12 +21,18 @@ example_files_suggest = []
 
 def generate_cv(resume, job_desc, context = ""):
     """
-    Generates a cover letter from a resume and a job description.
+    Generates a cover letter from a resume and a job description. 
+    The resume content is extracted from a pdf in the application, 
+    which is taken from the file tag in the request. In testing, the 
+    resume tag is used to pass in the sample resume. Context is also 
+    used as a user input to guide the generation.
     ```
     Request:
     {
         resume: string,  
-        job_desc: string
+        job_desc: string,
+        file: string,
+        context: string
     }
     Response:
     {
@@ -62,7 +68,8 @@ def resume_suggest(resume, job_desc):
     Request:
     {
         resume: string,  
-        job_desc: string
+        job_desc: string,
+        file: string
     }
     Response:
     {

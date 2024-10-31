@@ -110,7 +110,6 @@ export default function App() {
 						<Route path="/qa" element={<QA />} />
                         <Route path="/cv" element={<CoverLetter />} />
 						<Route path="/suggestions" element={<ResumeSuggestions />} />
-						{/* <Route path="/profile" element={<Profile />} /> */}
 						<Route path="*" element={<Navigate to="/home" replace />} />
 					</Routes>
 				</Content>

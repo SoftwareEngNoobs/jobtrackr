@@ -6,6 +6,7 @@ from pymongo import ReturnDocument
 def view_applications(Applications):
     
     '''
+    Returns the job applications that the user has active in the system.
     ```
     Request:
     {
@@ -45,6 +46,7 @@ def view_applications(Applications):
 def add_application(Applications):
     
     '''
+    Adds an application to the system for the given user.
     ```
     Request:
     {
@@ -96,6 +98,7 @@ def add_application(Applications):
 def delete_application(Applications):
     
     '''
+    Deletes an application from the system for the given user.
     ```
     Request:
     {
@@ -133,6 +136,7 @@ def delete_application(Applications):
 def modify_application(Applications):
     
     '''
+    Modifies an application for the given user.
     ```
     Request:
     {
@@ -184,3 +188,4 @@ def modify_application(Applications):
             return jsonify({"error": "No such Job ID found for this user's email"}), 400
         else:
             return jsonify({"message": "Job Application modified successfully"}), 200
+        
