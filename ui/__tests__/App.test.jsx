@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, queryByAttribute } from '@testing-library/react';
+import { render, queryByAttribute, queryAllByAttribute } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
@@ -12,6 +12,7 @@ import EditApplication from '../src/Components/AddApplication/EditApplication';
 const getById = queryByAttribute.bind(null, 'id');
 const getByClass = queryByAttribute.bind(null, 'class');
 const getByTitle = queryByAttribute.bind(null, 'title');
+const getAllByTitle = queryAllByAttribute.bind(null, 'title')
 
 const viewApplications = {
 	applications: [
@@ -144,8 +145,11 @@ describe('App', () => {
 		await user.click(date);
 		await user.click(getByClass(baseElement, 'ant-picker-today-btn'));
 
-		await user.click(getByClass(baseElement, 'ant-select-selector'));
-		await user.click(getByTitle(baseElement, 'Applied'));
+		await user.type(getById(baseElement, 'image'), 'www.google.com');
+		await user.click(getById(baseElement, 'status')); // <-- Fails here
+		
+		let list = getAllByTitle(baseElement, 'Applied');
+		await user.click(list[list.length - 1]);
 
 		await user.click(getById(baseElement, 'add-submit'));
 
