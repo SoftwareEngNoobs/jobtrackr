@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
-<title>backend.files API documentation</title>
+<title>backend.resume_extract API documentation</title>
 <meta name="description" content="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -22,7 +22,7 @@ hljs.highlightAll();
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>backend.files</code></h1>
+<h1 class="title">Module <code>backend.resume_extract</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -33,95 +33,11 @@ hljs.highlightAll();
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="backend.files.delete_file"><code class="name flex">
-<span>def <span class="ident">delete_file</span></span>(<span>Files)</span>
+<dt id="backend.resume_extract.extract_text_from_pdf"><code class="name flex">
+<span>def <span class="ident">extract_text_from_pdf</span></span>(<span>pdf_path)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
-{ 
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.download_file"><code class="name flex">
-<span>def <span class="ident">download_file</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-    status: 501
-    data: Authorization required
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.get_pdf_info"><code class="name flex">
-<span>def <span class="ident">get_pdf_info</span></span>(<span>file_req_name, Files, email)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Helper function to extract the values from a pdf
-in the AWS S3 bucket.</p></div>
-</dd>
-<dt id="backend.files.upload_file"><code class="name flex">
-<span>def <span class="ident">upload_file</span></span>(<span>UserRecords, Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string,
-    start: string,
-    file: file,
-    end: string,
-    filename: string
-
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
-</dd>
-<dt id="backend.files.view_files"><code class="name flex">
-<span>def <span class="ident">view_files</span></span>(<span>Files)</span>
-</code></dt>
-<dd>
-<div class="desc"><pre><code>Request:
-{
-    email: string  
-}
-Response:
-{
-    status: 200
-    data: Success message
-
-    status: 500
-    data: Error message
-
-}
-</code></pre></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </section>
@@ -140,11 +56,7 @@ Response:
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="backend.files.delete_file" href="#backend.files.delete_file">delete_file</a></code></li>
-<li><code><a title="backend.files.download_file" href="#backend.files.download_file">download_file</a></code></li>
-<li><code><a title="backend.files.get_pdf_info" href="#backend.files.get_pdf_info">get_pdf_info</a></code></li>
-<li><code><a title="backend.files.upload_file" href="#backend.files.upload_file">upload_file</a></code></li>
-<li><code><a title="backend.files.view_files" href="#backend.files.view_files">view_files</a></code></li>
+<li><code><a title="backend.resume_extract.extract_text_from_pdf" href="#backend.resume_extract.extract_text_from_pdf">extract_text_from_pdf</a></code></li>
 </ul>
 </li>
 </ul>
