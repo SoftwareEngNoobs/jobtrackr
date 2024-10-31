@@ -47,6 +47,9 @@ class FlaskTest(unittest.TestCase):
                                "question": "aa", "answer": "bb"})
         Applications.insert_one(application)
         UserRecords.delete_one({"email": "rrangar@ncsu.edu"})
+        Files.insert_one({"_id": ObjectId("66f5d5ed19e1859f9d89676f"), 
+                          "email": "dhrumilshah1234@gmail.com", 
+                          "filename": "1234568--;--testing.pdf"})
     
     def tearDown(self):
         # Clear the mock data after each test
@@ -55,6 +58,7 @@ class FlaskTest(unittest.TestCase):
                 "email": "dhrumilshah1234@gmail.com"})
         Applications.delete_many({"email": "dhrumilshah1234@gmail.com"})
         Questions.delete_many({"email": "dhrumilshah1234@gmail.com"})
+        Files.delete_one({"_id": ObjectId("66f5d5ed19e1859f9d89676f")})
 
 
     def testLogin(self):
@@ -251,6 +255,25 @@ class FlaskTest(unittest.TestCase):
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
+    def testWrongModifyApplicationWrongEmail(self):
+        tester = app.test_client(self)
+        req = {
+            "companyName": "a",
+            "jobTitle": "a",
+            "jobId": "a",
+            "description": "a",
+            "url": "b",
+            "date": "2022-12-28T03:33:43.737Z",
+            "status": "inReview",
+            "_id": "638eb81bff4164e60179bab2",
+            "email": "a@gmail.com",
+            "image": ""
+        }
+        urlToSend = "/modify_application"
+        response = tester.post(urlToSend, json = req)
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 400)
+
     def testModifyApplicationNoDate(self):
         tester = app.test_client(self)
         req = {
@@ -308,11 +331,29 @@ class FlaskTest(unittest.TestCase):
 
     def testviewFiles(self):
         tester = app.test_client(self)
+        email = "testing@gmail.com"
+        urlToSend = f"/view_files?email={email}"
+        response = tester.get(urlToSend)
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 200)
+
+    def testViewFilesWithContent(self):
+        tester = app.test_client(self)
         email = "dhrumilshah1234@gmail.com"
         urlToSend = f"/view_files?email={email}"
         response = tester.get(urlToSend)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
+        self.assertTrue(len(json.loads(response.data)["files"]) == 1)
+
+    def testWrongViewFilesWrongEmail(self):
+        tester = app.test_client(self)
+        email = "a@gmail.com"
+        urlToSend = f"/view_files?email={email}"
+        response = tester.get(urlToSend)
+        statuscode = response.status_code
+        self.assertEqual(statuscode, 200)
+        self.assertTrue(len(json.loads(response.data)["files"]) == 0)
 
     def testEmptyFiles(self):
         tester = app.test_client(self)
