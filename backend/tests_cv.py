@@ -1,3 +1,10 @@
+"""
+This file includes Prompt Engineering Tests for evaluting the method 
+of prompting and system prompt to use for generating cover letters. 
+The output of the generated test files are located in the 
+cv_test_output folder.
+"""
+
 import ollama_connect
 from unittest.main import main
 import bcrypt
@@ -25,15 +32,28 @@ Questions = db.QA
 Files = db.file
 
 def import_file(path):
+    """
+    Imports and returns the text content from a file at the given path.
+    """
     with open(path, mode='r', encoding='utf-8') as f:
         file_content = f.read()
     return file_content
 
 def export_file(path, content):
+    """
+    Creates and exports the provided content into the file at the given path.
+    """
     with open(path, mode='w', encoding='utf-8') as f:
         f.write(content)
 
 def cv_test(self, prompt_file, resume_file, job_file, example_files = []):
+    """
+    Master template for Cover Letter Prompt Engineering Tests.
+    
+    Takes the prompt, resume, job description, and example files if provided, 
+    reads in the content from the files in the sample_data file, and runs the 
+    given test. The output is in the cv_test_output folder.
+    """
     # Set up the flask client
     tester = app.test_client(self)
     email = "dhrumilshah1234@gmail.com"
@@ -76,8 +96,10 @@ def cv_test(self, prompt_file, resume_file, job_file, example_files = []):
         os.mkdir(os.path.join("cv_test_output"))
     export_file(output_path, cover_letter)
 
-
+# File to use for the One Shot Prompt Engineering Tests
 one_shot_examples = ["entry_level_software_engineer.txt"]
+
+# Files to use for the Few Shot Prompt Engineering Tests
 few_shot_examples = [
     "entry_level_software_engineer.txt", 
     "experienced_software_engineer.txt", 

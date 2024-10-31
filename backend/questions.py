@@ -1,3 +1,10 @@
+"""
+This file handles the functionality for saved questions in 
+JobTrackr. There are functions for deleting questions, adding 
+questions, viewing questions, and modifying questions. These 
+functions are all within the context of the current user.
+"""
+
 from bson import ObjectId
 from flask import request, jsonify
 from pymongo import ReturnDocument
@@ -6,6 +13,7 @@ from pymongo import ReturnDocument
 def delete_question(Questions):
     
     '''
+    Delete a question from the system for the given user.
     ```
     Request:
     {
@@ -41,6 +49,7 @@ def delete_question(Questions):
 def add_question(Questions):
     
     '''
+    Add a question to the system for the given user.
     ```
     Request:
     {
@@ -78,6 +87,7 @@ def add_question(Questions):
 def view_questions(Questions):
     
     '''
+    View questions in the system for the given user.
     ```
     Request:
     {
@@ -116,6 +126,7 @@ def view_questions(Questions):
 def modify_question(Questions):
     
     '''
+    Modifies a question in the system for a given user.
     ```
     Request:
     {

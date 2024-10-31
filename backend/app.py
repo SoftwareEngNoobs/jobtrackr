@@ -1,3 +1,9 @@
+"""
+This is the main file for the backend. This is the file that is run
+when starting up the backend for JobTrackr. It contains all the API
+routes for the application.
+"""
+
 from flask import Flask, jsonify, request, after_this_request
 from pymongo import MongoClient
 from flask_cors import CORS

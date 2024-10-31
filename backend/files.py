@@ -1,3 +1,11 @@
+"""
+This file handles the functionality for using AWS S3 for storing 
+resume files in the cloud. There are functions for uploading files, 
+viewing files, deleting files, downloading files, and scraping text 
+content from the pdf file. These functions are all within the context 
+of the current user.
+"""
+
 import io
 from bson import ObjectId
 from flask import request, jsonify, send_file, after_this_request
@@ -19,6 +27,7 @@ bucket_name = "job-tracker-resume-upload"
 def upload_file(UserRecords, Files):
     
     '''
+    Uploads a file to the system for the given user using AWS S3.
     ```
     Request:
     {
@@ -75,6 +84,7 @@ def upload_file(UserRecords, Files):
 def view_files(Files):
     
     '''
+    Retrieves the files for the given user that were uploaded to AWS S3.
     ```
     Request:
     {
@@ -135,6 +145,7 @@ def get_pdf_info(file_req_name, Files, email):
 def download_file(Files):
     
     '''
+    Downloads the given file to the client machine from AWS S3.
     ```
     Request:
     {
@@ -182,6 +193,7 @@ def download_file(Files):
 def delete_file(Files):
     
     '''
+    Deletes a file from the system for the given user from AWS S3.
     ```
     Request:
     { 

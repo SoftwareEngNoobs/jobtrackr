@@ -1,3 +1,10 @@
+"""
+This file contains tests for the API requests within JobTrackr. 
+The tests evalute both the proper method of using the function 
+as well as a possible way the user could deviate from the expected 
+use case.
+"""
+
 from unittest.main import main
 import bcrypt
 from bson import ObjectId
