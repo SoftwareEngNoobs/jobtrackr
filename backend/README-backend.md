@@ -78,9 +78,20 @@ python app.py
 ```
 
 ### Backend Test
+Ensure you are in the virtual environment before running
 
 Run this command to test the backend APIs
 
 ```
 python backend\tests.py
+```
+Run these command to test the resume suggesstions and cover letter generation
+```
+python resume_extract_tests.py
+python tests_cv.py
+```
+
+Run this command to test the pdf word extraction
+```
+python resume_extract_tests.py
 ```
