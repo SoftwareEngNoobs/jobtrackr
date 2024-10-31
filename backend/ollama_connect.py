@@ -10,7 +10,31 @@ You are a helpful assistant that writes a cover letter from a resume and a job d
 Only respond with the cover letter and nothing else.
 """
 
+system_prompt_suggest = """
+You are a helpful assistant that generates suggestions for a resume from a resume and a job description.
+You have also been provided a sample output.
+Only respond with the suggestions and nothing else.
+"""
+
 example_files = []
+
+example_files_suggest = [
+    """Here are a few Suggestions
+
+1. Experience:
+- Replace Passive Voice Phrases with Active Voice Phrases
+- Emphasize Python Usage within Job Descriptions
+- Discuss Soft skills like talking to customers and leadership opportunities
+
+2. Skills:
+- Reorganize Skills to state Python and Java first since they are on the job description
+- State Key skills related with Leadership such as coordinination and teamwork
+
+3. Projects:
+- Break Descriptions into small bullet points
+- Provide a link to the project if possible
+- Create a digital portfolio to showoff Projects"""
+]
 
 def generate_cv(resume, job_desc, context = ""):
     """
@@ -68,13 +92,14 @@ def resume_suggest(resume, job_desc):
     try:
         if request:
             messages = [
-                (
-                    "system",
-                    "You are a helpful assistant that provides resume suggestions to tailor a resume to the job description.",
-                ),
+                ("system",system_prompt_suggest,),
                 ("human", "Resume: " + resume),
                 ("human", "Job Description: " + job_desc),
             ]
+
+            for f in example_files_suggest:
+                messages.append(("human", "Example Resume Suggestions: " + f))
+
             msg = llm.invoke(messages)
             response = msg.content
             return jsonify({'message': "Successfully Created Resume Suggestions", 'suggestions': response}), 200

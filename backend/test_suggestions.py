@@ -37,7 +37,7 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
     # Set up the flask client
     tester = app.test_client(self)
     email = "dhrumilshah1234@gmail.com"
-    urlToSend = f"/suggestions"
+    urlToSend = f"/resume_suggest"
     
     # Read in the sample data files
     prompt_path = os.path.join("sample_data", "system_prompts", prompt_file)
@@ -48,14 +48,14 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
     job_desc = import_file(job_desc_path)
 
     # Adjust the System Prompt and Example Files
-    ollama_connect.system_prompt_cv = system_prompt
+    ollama_connect.system_prompt_suggest = system_prompt
     ollama_connect.example_files.clear()
     example_files_content = []
     for example in example_files:
-        example_path = os.path.join("sample_data", "sample_cover_letters", example)
+        example_path = os.path.join("sample_data", "sample_resume_suggestions", example)
         example_content = import_file(example_path)
         example_files_content.append(example_content)
-    ollama_connect.example_files = example_files_content
+    ollama_connect.example_files_suggest = example_files_content
     filename = prompt_file[:-4] + "_" + resume_file[:-4] + "_" + job_file[:-4] + ".txt"
     
     # Send the request
@@ -70,18 +70,60 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
 
     # Print the results to a file with the name of the test
     response_json = json.loads(response.data)
-    cover_letter = response_json['suggestions']
-    output_path = os.path.join("cv_test_output", filename)
-    export_file(output_path, cover_letter)
+    suggestions = response_json['suggestions']
+    output_path = os.path.join("suggestions_test_output", filename)
+    if not os.path.exists(os.path.join("suggestions_test_output")):
+        os.mkdir(os.path.join("suggestions_test_output"))
+    export_file(output_path, suggestions)
 
-
-# one_shot_examples = ["entry_level_software_engineer.txt"]
-# few_shot_examples = [
-#     "entry_level_software_engineer.txt", 
-#     "experienced_software_engineer.txt", 
-#     "junior_software_engineer.txt"
-# ]
+one_shot_examples = ["resume_suggestion.txt"]
 
 class FlaskTest(unittest.TestCase):
-    def test_zero_shot_Charles_Lenovo(self):
-        suggestions_test(self, )
+   
+    def test_zero_shot_Cynthia_Lenovo(self):
+        suggestions_test(self, "suggestion_zero_shot.txt", "cynthia_dwayne.txt", "lenovo.txt")
+
+    def test_zero_shot_Ava_EpicGames(self):
+        suggestions_test(self, "suggestion_zero_shot.txt", "ava_johnson.txt", "epicgames.txt")
+
+    def test_zero_shot_Charles_Fidelity(self):
+        suggestions_test(self, "suggestion_zero_shot.txt", "charles_mcturland.txt", "fidelity.txt")
+
+    def test_zero_shot_Cynthia_RedHat(self):
+         suggestions_test(self, "suggestion_zero_shot.txt", "cynthia_dwayne.txt", "redhat.txt")
+
+    def test_zero_shot_Charles_Apple(self):
+        suggestions_test(self, "suggestion_zero_shot.txt", "charles_mcturland.txt", "apple.txt")
+
+    def test_one_shot_Cynthia_Lenovo(self):
+        suggestions_test(self, "suggestion_one_shot.txt", "cynthia_dwayne.txt", "lenovo.txt", one_shot_examples)
+
+    def test_one_shot_Ava_EpicGames(self):
+        suggestions_test(self, "suggestion_one_shot.txt", "ava_johnson.txt", "epicgames.txt", one_shot_examples)
+
+    def test_one_shot_Charles_Fidelity(self):
+        suggestions_test(self, "suggestion_one_shot.txt", "charles_mcturland.txt", "fidelity.txt", one_shot_examples)
+
+    def test_one_shot_Cynthia_RedHat(self):
+         suggestions_test(self, "suggestion_one_shot.txt", "cynthia_dwayne.txt", "redhat.txt", one_shot_examples)
+
+    def test_one_shot_Charles_Apple(self):
+        suggestions_test(self, "suggestion_one_shot.txt", "charles_mcturland.txt", "apple.txt", one_shot_examples)
+
+    def test_one_shot_long_Cynthia_Lenovo(self):
+        suggestions_test(self, "suggestion_one_shot_long.txt", "cynthia_dwayne.txt", "lenovo.txt", one_shot_examples)
+
+    def test_one_shot_long_Ava_EpicGames(self):
+        suggestions_test(self, "suggestion_one_shot_long.txt", "ava_johnson.txt", "epicgames.txt", one_shot_examples)
+
+    def test_one_shot_long_Charles_Fidelity(self):
+        suggestions_test(self, "suggestion_one_shot_long.txt", "charles_mcturland.txt", "fidelity.txt", one_shot_examples)
+
+    def test_one_shot_long_Cynthia_RedHat(self):
+         suggestions_test(self, "suggestion_one_shot_long.txt", "cynthia_dwayne.txt", "redhat.txt", one_shot_examples)
+
+    def test_one_shot_long_Charles_Apple(self):
+        suggestions_test(self, "suggestion_one_shot_long.txt", "charles_mcturland.txt", "apple.txt", one_shot_examples)
+
+if __name__=="__main__":
+    unittest.main()
