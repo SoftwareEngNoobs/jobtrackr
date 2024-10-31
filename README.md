@@ -17,18 +17,13 @@
 [![Backend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml)
 [![Backend-Test](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml)
 
-<!-- ![Lines of code](https://img.shields.io/tokei/lines-raw/github.com/ekanshsinghal/se-group26-proj1) -->
-
 ![Repo Size](https://img.shields.io/github/repo-size/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/CSC510-Do-Lorenc-McDavitt/jobtrackr)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/releases/)
 [![codecov](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr)
 
 ---
 
-### Documentation for the project is available [here](https://CSC510-Do-Lorenc-McDavitt.github.io/jobtrackr/backend/index.html).
-
-### Discord Channel: [Click here](https://discord.gg/rrn6BfhH)
-
+### Documentation for the project is available [here](https://CSC510-Do-Lorenc-McDavitt.github.io/jobtrackr/docs/backend/index.html).
 
 ---
 
