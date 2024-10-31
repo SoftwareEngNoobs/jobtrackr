@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
 <title>backend.tests_cv API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="This file includes Prompt Engineering Tests for evaluting the method
+of prompting and system prompt to use for generating cover letters.
+The output …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -25,6 +27,10 @@ hljs.highlightAll();
 <h1 class="title">Module <code>backend.tests_cv</code></h1>
 </header>
 <section id="section-intro">
+<p>This file includes Prompt Engineering Tests for evaluting the method
+of prompting and system prompt to use for generating cover letters.
+The output of the generated test files are located in the
+cv_test_output folder.</p>
 </section>
 <section>
 </section>
@@ -37,19 +43,22 @@ hljs.highlightAll();
 <span>def <span class="ident">cv_test</span></span>(<span>self, prompt_file, resume_file, job_file, example_files=[])</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Master template for Cover Letter Prompt Engineering Tests.</p>
+<p>Takes the prompt, resume, job description, and example files if provided,
+reads in the content from the files in the sample_data file, and runs the
+given test. The output is in the cv_test_output folder.</p></div>
 </dd>
 <dt id="backend.tests_cv.export_file"><code class="name flex">
 <span>def <span class="ident">export_file</span></span>(<span>path, content)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Creates and exports the provided content into the file at the given path.</p></div>
 </dd>
 <dt id="backend.tests_cv.import_file"><code class="name flex">
 <span>def <span class="ident">import_file</span></span>(<span>path)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Imports and returns the text content from a file at the given path.</p></div>
 </dd>
 </dl>
 </section>

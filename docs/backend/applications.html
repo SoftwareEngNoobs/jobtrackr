@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
 <title>backend.applications API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="This file contains the functionality for working with job applications
+for JobTrackr on the backend. There are functions for viewing, adding,
+…">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -25,6 +27,10 @@ hljs.highlightAll();
 <h1 class="title">Module <code>backend.applications</code></h1>
 </header>
 <section id="section-intro">
+<p>This file contains the functionality for working with job applications
+for JobTrackr on the backend. There are functions for viewing, adding,
+deleting, and modifying applications. All of these functions are within
+the context of the current user.</p>
 </section>
 <section>
 </section>
@@ -37,7 +43,8 @@ hljs.highlightAll();
 <span>def <span class="ident">add_application</span></span>(<span>Applications)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Adds an application to the system for the given user.</p>
+<pre><code>Request:
 {
     email: email,
     companyName: string,
@@ -63,7 +70,8 @@ Response:
 <span>def <span class="ident">delete_application</span></span>(<span>Applications)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Deletes an application from the system for the given user.</p>
+<pre><code>Request:
 {
     email: email,
     jobId: number
@@ -83,7 +91,8 @@ Response:
 <span>def <span class="ident">modify_application</span></span>(<span>Applications)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Modifies an application for the given user.</p>
+<pre><code>Request:
 {
     email: email,
     companyName: string,
@@ -110,7 +119,8 @@ Response:
 <span>def <span class="ident">view_applications</span></span>(<span>Applications)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Returns the job applications that the user has active in the system.</p>
+<pre><code>Request:
 {
     email: string
 }

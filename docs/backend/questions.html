@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
 <title>backend.questions API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="This file handles the functionality for saved questions in
+JobTrackr. There are functions for deleting questions, adding
+questions, viewing …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -25,6 +27,10 @@ hljs.highlightAll();
 <h1 class="title">Module <code>backend.questions</code></h1>
 </header>
 <section id="section-intro">
+<p>This file handles the functionality for saved questions in
+JobTrackr. There are functions for deleting questions, adding
+questions, viewing questions, and modifying questions. These
+functions are all within the context of the current user.</p>
 </section>
 <section>
 </section>
@@ -37,7 +43,8 @@ hljs.highlightAll();
 <span>def <span class="ident">add_question</span></span>(<span>Questions)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Add a question to the system for the given user.</p>
+<pre><code>Request:
 {
     email: string  
     question: string
@@ -55,7 +62,8 @@ Response:
 <span>def <span class="ident">delete_question</span></span>(<span>Questions)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Delete a question from the system for the given user.</p>
+<pre><code>Request:
 {
     email: string,  
     id: number
@@ -72,7 +80,8 @@ Response:
 <span>def <span class="ident">modify_question</span></span>(<span>Questions)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Modifies a question in the system for a given user.</p>
+<pre><code>Request:
 {
     email: string  
     id: number
@@ -94,7 +103,8 @@ Response:
 <span>def <span class="ident">view_questions</span></span>(<span>Questions)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>View questions in the system for the given user.</p>
+<pre><code>Request:
 {
     email: string  
 }

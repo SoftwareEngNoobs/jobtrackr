@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
 <title>backend.files API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="This file handles the functionality for using AWS S3 for storing
+resume files in the cloud. There are functions for uploading files,
+viewing files, …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -25,6 +27,11 @@ hljs.highlightAll();
 <h1 class="title">Module <code>backend.files</code></h1>
 </header>
 <section id="section-intro">
+<p>This file handles the functionality for using AWS S3 for storing
+resume files in the cloud. There are functions for uploading files,
+viewing files, deleting files, downloading files, and scraping text
+content from the pdf file. These functions are all within the context
+of the current user.</p>
 </section>
 <section>
 </section>
@@ -37,7 +44,8 @@ hljs.highlightAll();
 <span>def <span class="ident">delete_file</span></span>(<span>Files)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Deletes a file from the system for the given user from AWS S3.</p>
+<pre><code>Request:
 { 
 }
 Response:
@@ -55,7 +63,8 @@ Response:
 <span>def <span class="ident">download_file</span></span>(<span>Files)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Downloads the given file to the client machine from AWS S3.</p>
+<pre><code>Request:
 {
 
 }
@@ -84,7 +93,8 @@ in the AWS S3 bucket.</p></div>
 <span>def <span class="ident">upload_file</span></span>(<span>UserRecords, Files)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Uploads a file to the system for the given user using AWS S3.</p>
+<pre><code>Request:
 {
     email: string,
     start: string,
@@ -108,7 +118,8 @@ Response:
 <span>def <span class="ident">view_files</span></span>(<span>Files)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Retrieves the files for the given user that were uploaded to AWS S3.</p>
+<pre><code>Request:
 {
     email: string  
 }

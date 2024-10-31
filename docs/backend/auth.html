@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.1">
 <title>backend.auth API documentation</title>
-<meta name="description" content="">
+<meta name="description" content="This file contains the functionality for user authentication for
+JobTrackr. There are functions to register a new user, login an
+existing user, and …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -25,6 +27,9 @@ hljs.highlightAll();
 <h1 class="title">Module <code>backend.auth</code></h1>
 </header>
 <section id="section-intro">
+<p>This file contains the functionality for user authentication for
+JobTrackr. There are functions to register a new user, login an
+existing user, and logout a currently logged in user.</p>
 </section>
 <section>
 </section>
@@ -37,7 +42,8 @@ hljs.highlightAll();
 <span>def <span class="ident">login</span></span>(<span>UserRecords)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Attempts to login a user with the provided email and password.</p>
+<pre><code>Request:
 {
     email: string,
     password: string
@@ -57,7 +63,8 @@ Response:
 <span>def <span class="ident">logout</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Logs out the current user from the system.</p>
+<pre><code>Request:
 {
 
 }
@@ -72,7 +79,8 @@ Response:
 <span>def <span class="ident">register</span></span>(<span>UserRecords)</span>
 </code></dt>
 <dd>
-<div class="desc"><pre><code>Request:
+<div class="desc"><p>Registers a new user into the system.</p>
+<pre><code>Request:
 {
     firstName: string,
     lastName: string,
