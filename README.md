@@ -36,24 +36,54 @@
 - [Architecture](#architecture)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Application Demo](#application-demo)
-- [Getting Started](#getting-started---user)
+- [Getting Started](#getting-started---developer)
 - [Development Specifications](#development-tech-stack)
   - [Backend](./backend/README-backend.md)
   - [Frontend](./ui/README-frontend.md)
-- [Features Overview]()
 - [License](./LICENSE)
 - [Tools](#tools)
 - [Contributors](#contributors)
 
 ## Description
 
-Excel sheets that are complex and disorganized must go! Every job-related data can be managed by our JobTrackr Application, including your job profile, applications, status, important dates, notes, saved applications, job descriptions, recruiter details, compensation and offer package, and more. Now, it supports even managing your files and offers a Question Answer Scrathpad for you to save answers to commonly asked questions during job applications.
+Excel sheets that are complex and disorganized must go! Every job-related data can be managed by our JobTrackr Application, including your job profile, applications, status, important dates, notes, saved applications, job descriptions, recruiter details, compensation and offer package, and more. It even supports even managing your files and offers a Question Answer Scratchpad for you to save answers to commonly asked questions during job applications. Now, we've pushed the limits to make your process even more convenient. Need to improve your resume? Do you need to create cover letters? Don't worry, we now support resume suggestions and cover letter creation with AI!
 
 ## What's New?
+### Before
+Save Applications
+* Applications could be created and saved. These applications persist.
 
-<p align="center">
-  <img src="./ui/assets/BeforeAfter.png" width="50%" height="50%"/></a>
-</p>
+Track Applications
+* Applications can be tracked by their status.
+
+Manage Files
+* Important files such as resumes or CVs could be uplodaed to AWS S3.
+
+Question/Answer Scratchpad
+* Common questions and answers can be stored for convenience.
+
+Continuous Integration
+* Deployment was done through GitHub Actions. With Jenkins, Ansible, and GitHub webhooks.
+
+### After
+Extra files not stored in backend
+* Previously, when files from AWS S3 were sent to the user, they would be downloaded and kept in the backend directory as a side consequence. We have updated it so that the these files will not clog up our repository
+
+Resume suggestions
+* Users can now get resume suggestions! Have you ever wanted to get advice about your resume according to a job description but not know who to ask? Well, now you can ask AI to do it for you.
+
+Cover letter generation
+* Users can now generate cover letters for a specific job application with their resume! It makes it super convenient for jobs that keep asking for you to write 300+ words!
+
+Ollama integration
+* We've integrated Llama3.2, a powerful AI system that gives seamless responses. Even better is that it is open source! You won't have to worry about cost!
+
+UI update! Dropdown and company logos can now be added! 
+> Are aesthetics important to you? Well do not fear, some new components are here!
+* Dropdown
+  * You can now move applications around with a dropdown instead of having to modify the application each time! Makes it way more convenient.
+* Logos
+  * You can now insert image links to display company logos on applications! This is for aesthetics! Now you can look at pictures instead of just looking only at text.
 
 https://user-images.githubusercontent.com/39649967/205716460-d45bbad7-6222-4a0d-9bb1-bbd808db53a2.mp4
 
@@ -103,10 +133,6 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 [![JobTrackr App Demo](https://img.youtube.com/vi/3UecpZQn07E/maxresdefault.jpg)](https://www.youtube.com/embed/3UecpZQn07E)
 
 
-## Getting Started - User
-
-All you need to do is visit [here](http://3.110.50.141:3000)
-
 ## Getting Started - Developer
 
 ### Prerequisites
@@ -125,6 +151,7 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 
 2. [Backend Setup](./backend/README-backend.md)
 3. [UI Setup](./ui/README-frontend.md)
+4. [Workflow Setup](./.github/workflows)
 
 ## Tools
 
