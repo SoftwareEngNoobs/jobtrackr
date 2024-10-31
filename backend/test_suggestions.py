@@ -106,7 +106,7 @@ class FlaskTest(unittest.TestCase):
          suggestions_test(self, "suggestion_one_shot.txt", "cynthia_dwayne.txt", "redhat.txt", one_shot_examples)
 
     def test_one_shot_Charles_Apple(self):
-        suggestions_test(self, "suggestion_one_shot_long.txt", "charles_mcturland.txt", "apple.txt", one_shot_examples)
+        suggestions_test(self, "suggestion_one_shot.txt", "charles_mcturland.txt", "apple.txt", one_shot_examples)
 
     def test_one_shot_long_Cynthia_Lenovo(self):
         suggestions_test(self, "suggestion_one_shot_long.txt", "cynthia_dwayne.txt", "lenovo.txt", one_shot_examples)
