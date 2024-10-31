@@ -1,7 +1,7 @@
 ## Install NPM dependencies
 
 ```
-cd se-group1-project2/ui
+cd jobtrackr/ui
 npm install
 ```
 ### Connecting Backend to Frontend
