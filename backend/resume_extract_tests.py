@@ -1,3 +1,8 @@
+"""
+This file texts the extract_test_from_pdf function with 
+various pdf files.
+"""
+
 import unittest
 from unittest.main import main
 import os

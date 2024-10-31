@@ -1,3 +1,9 @@
+"""
+This file contains the functionality for user authentication for 
+JobTrackr. There are functions to register a new user, login an 
+existing user, and logout a currently logged in user.
+"""
+
 from bson import ObjectId
 from flask import request, session, jsonify
 from pymongo import ReturnDocument

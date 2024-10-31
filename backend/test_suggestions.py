@@ -1,3 +1,10 @@
+"""
+This file contains Prompt Engineering tests for evaluating possible 
+system prompts and methods of prompt engineering for providing resume 
+suggestions. The test output files are located in the 
+suggestions_test_output folder.
+"""
+
 import ollama_connect
 from unittest.main import main
 import bcrypt

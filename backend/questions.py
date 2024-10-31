@@ -1,3 +1,10 @@
+"""
+This file handles the functionality for saved questions in 
+JobTrackr. There are functions for deleting questions, adding 
+questions, viewing questions, and modifying questions. These 
+functions are all within the context of the current user.
+"""
+
 from bson import ObjectId
 from flask import request, jsonify
 from pymongo import ReturnDocument

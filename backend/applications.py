@@ -1,3 +1,10 @@
+"""
+This file contains the functionality for working with job applications 
+for JobTrackr on the backend. There are functions for viewing, adding, 
+deleting, and modifying applications. All of these functions are within 
+the context of the current user.
+"""
+
 from bson import ObjectId
 from flask import request, jsonify
 from pymongo import ReturnDocument

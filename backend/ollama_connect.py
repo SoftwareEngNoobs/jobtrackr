@@ -1,5 +1,17 @@
+"""
+This file handles the functionality for generating cover letters 
+and providing resume suggestions using Ollama. The system prompts used 
+for each of these tasks are at the top of the file using the 
+system_prompt_cv and system_prompt_suggest variables. 
+
+The model being used by Ollama can be changed by adjusting the model 
+variable in the ChatOllama instantion of the llm variable at the top 
+of the file.
+"""
+
 from flask import request, jsonify
 from langchain_ollama import ChatOllama
+
 llm = ChatOllama(
     model="llama3.2",
     temperature=0,

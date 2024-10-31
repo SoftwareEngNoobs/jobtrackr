@@ -1,3 +1,10 @@
+"""
+This file includes Prompt Engineering Tests for evaluting the method 
+of prompting and system prompt to use for generating cover letters. 
+The output of the generated test files are located in the 
+cv_test_output folder.
+"""
+
 import ollama_connect
 from unittest.main import main
 import bcrypt

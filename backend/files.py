@@ -1,3 +1,11 @@
+"""
+This file handles the functionality for using AWS S3 for storing 
+resume files in the cloud. There are functions for uploading files, 
+viewing files, deleting files, downloading files, and scraping text 
+content from the pdf file. These functions are all within the context 
+of the current user.
+"""
+
 import io
 from bson import ObjectId
 from flask import request, jsonify, send_file, after_this_request
