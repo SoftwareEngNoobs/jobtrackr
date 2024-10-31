@@ -72,6 +72,8 @@ def cv_test(self, prompt_file, resume_file, job_file, example_files = []):
     response_json = json.loads(response.data)
     cover_letter = response_json['letter']
     output_path = os.path.join("cv_test_output", filename)
+    if not os.path.exists(os.path.join("cv_test_output")):
+        os.mkdir(os.path.join("cv_test_output"))
     export_file(output_path, cover_letter)
 
 

@@ -70,9 +70,11 @@ def suggestions_test(self, prompt_file, resume_file, job_file, example_files = [
 
     # Print the results to a file with the name of the test
     response_json = json.loads(response.data)
-    cover_letter = response_json['suggestions']
+    suggestions = response_json['suggestions']
     output_path = os.path.join("suggestions_test_output", filename)
-    export_file(output_path, cover_letter)
+    if not os.path.exists(os.path.join("suggestions_test_output")):
+        os.mkdir(os.path.join("suggestions_test_output"))
+    export_file(output_path, suggestions)
 
 one_shot_examples = ["resume_suggestion.txt"]
 
