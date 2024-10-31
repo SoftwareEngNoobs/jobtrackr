@@ -123,4 +123,5 @@ class FlaskTest(unittest.TestCase):
     def test_one_shot_long_Charles_Apple(self):
         suggestions_test(self, "suggestion_one_shot_long.txt", "charles_mcturland.txt", "apple.txt", one_shot_examples)
 
-    
+if __name__=="__main__":
+    unittest.main()
