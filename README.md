@@ -4,7 +4,6 @@
   <img src="./ui/assets/LogoWithTagline.png" alt="Logo"/>
 </p>
 
-[![DOI](https://zenodo.org/badge/564049508.svg)](https://zenodo.org/badge/latestdoi/564049508)
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub](https://img.shields.io/badge/Language-JavaScript-blue.svg)
 ![Yarn](https://img.shields.io/badge/Yarn-v1.22.19-green.svg)
@@ -12,21 +11,21 @@
 ![Node](https://img.shields.io/badge/node-v16.15.1-green.svg)
 ![Python](https://img.shields.io/badge/python-v3.8-green.svg)
 
-![Open issues](https://img.shields.io/github/issues-raw/jayrajmulani/se-group1-project2)
-![Closed issues](https://img.shields.io/github/issues-closed-raw/jayrajmulani/se-group1-project2?color=bright-green)
-[![frontend-build](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/frontend_build_test.yml)
-[![Backend-build](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/backend_build.yml/badge.svg)](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/backend_build.yml)
-[![Backend-Test](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/jayrajmulani/se-group1-project2/actions/workflows/code_coverage.yml)
+![Open issues](https://img.shields.io/github/issues-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr)
+![Closed issues](https://img.shields.io/github/issues-closed-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=bright-green)
+[![frontend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml)
+[![Backend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml)
+[![Backend-Test](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml)
 
 <!-- ![Lines of code](https://img.shields.io/tokei/lines-raw/github.com/ekanshsinghal/se-group26-proj1) -->
 
-![Repo Size](https://img.shields.io/github/repo-size/jayrajmulani/se-group1-project2?color=brightgreen)
-[![GitHub Release](https://img.shields.io/github/release/jayrajmulani/se-group1-project2)](https://github.com/jayrajmulani/se-group1-project2/releases/)
-[![codecov](https://codecov.io/github/jayrajmulani/se-group1-project2/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/jayrajmulani/se-group1-project2)
+![Repo Size](https://img.shields.io/github/repo-size/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=brightgreen)
+[![GitHub Release](https://img.shields.io/github/release/CSC510-Do-Lorenc-McDavitt/jobtrackr)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/releases/)
+[![codecov](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr)
 
 ---
 
-### Documentation for the project is available [here](https://jayrajmulani.github.io/se-group1-project2/backend/index.html).
+### Documentation for the project is available [here](https://CSC510-Do-Lorenc-McDavitt.github.io/jobtrackr/backend/index.html).
 
 ### Discord Channel: [Click here](https://discord.gg/rrn6BfhH)
 
@@ -49,7 +48,7 @@
 - [Features Overview]()
 - [License](./LICENSE)
 - [Tools](#tools)
-- [Contributors](#Contributors-👨‍🏭)
+- [Contributors](#contributors)
 
 ## Description
 
@@ -126,7 +125,7 @@ All you need to do is visit [here](http://3.110.50.141:3000)
 1. Clone the repository
 
 ```
-git clone https://github.com/jayrajmulani/se-group1-project2.git
+git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 ```
 
 2. [Backend Setup](./backend/README-backend.md)
@@ -147,7 +146,7 @@ git clone https://github.com/jayrajmulani/se-group1-project2.git
 - [Ollama](https://ollama.com/)
 - [Llama3.2](https://ollama.com/library/llama3.2)
 
-## Contributors 👨‍🏭
+## Contributors
 
 <table>
 <tr>

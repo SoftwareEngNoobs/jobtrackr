@@ -10,6 +10,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 env
+backend/cv_test_output
 
 
 __pycache__

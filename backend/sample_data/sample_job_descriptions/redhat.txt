@@ -1,0 +1,27 @@
+Red Hat
+Handle bug reports and add features to software developed by Red Hat and be responsible for ensuring the system is operational and computations are accurate.
+
+Telecommuting permitted: work may be performed within normal commuting distance from the Red Hat, Inc. office in Raleigh, NC
+
+What You Will Do:
+Design, develop, and maintain the data pipeline used to store and retrieve application data and work with architects to design and implement features related to the data pipeline.
+Work to produce required analytics for customers to view and understand their cloud compute spend. Work to ensure application software is well tested by writing automated tests and ensuring that code quality metrics are high and produce code coverage reports that can be used to verify test work.
+Help develop metrics and performance stands such as HTTP request response times, database query times, and backend job processing times.
+Work with Red Hat Product managers, architects, and management to understand customer requirement, help design, plan schedules, and size work required and work with the team to implement these features.
+Work with Product Management and stakeholders to identity gaps in both requirements and customer features and help ensure that the system is responsive to customers’ needs.
+Help operate the software as it is a Software as a Service application and deploy code to production environments, monitor operations of production code, and support the health of production code.
+Monitor bug reports and support cases from customers and propose solutions to mitigate problems found by uses of the software.
+Help analyze operational metrics and propose specifications and customer interfaces based on both direct feedback and system data.
+What You Will Bring:
+Bachelor’s degree (U.S. or foreign equivalent) in Computer Science or related field and two (2) years of experience in the job offered or related role.
+Must have two (2) years of experience with: troubleshooting and debugging service applications.
+Must have one (1) year of experience with: Python programming language and the Django framework; the fundamental concepts of relational databases and SQL queries; containerization technologies; and coding peer reviews and feedback.
+#LI-DNI
+The salary range for this position is $112,486 - $144,660. Actual offer will be based on your qualifications.
+Pay Transparency
+Red Hat determines compensation based on several factors including but not limited to job location, experience, applicable skills and training, external market value, and internal pay equity. Annual salary is one component of Red Hat’s compensation package. This position may also be eligible for bonus, commission, and/or equity. For positions with Remote-US locations, the actual salary range for the position may differ based on location but will be commensurate with job duties and relevant work experience.
+About Red Hat
+Red Hat
+is the world’s leading provider of enterprise
+open source
+software solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies. Spread across 40+ countries, our associates work flexibly across work environments, from in-office, to office-flex, to fully remote, depending on the requirements of their role. Red Hatters are encouraged to bring their best ideas, no matter their title or tenure. We're a leader in open source because of our open and inclusive environment. We hire creative, passionate people ready to contribute their ideas, help solve complex problems, and make an impact.
