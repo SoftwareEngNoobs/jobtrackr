@@ -1,6 +1,6 @@
 """
-This is the main file for the backend. This is the file that is run 
-when starting up the backend for JobTrackr. It contains all the API 
+This is the main file for the backend. This is the file that is run
+when starting up the backend for JobTrackr. It contains all the API
 routes for the application.
 """
 
