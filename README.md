@@ -169,6 +169,13 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 - [Ollama](https://ollama.com/)
 - [Llama3.2](https://ollama.com/library/llama3.2)
 
+## Future Milestones
+- Drag and Drop Kanban Board
+- Upload Generated Cover Letters
+- Host the application on AWS EC2
+- Web Scraper for Job Descriptions from Indeed
+- Markdown formatting for notes
+
 ## Contributors
 
 <table>
