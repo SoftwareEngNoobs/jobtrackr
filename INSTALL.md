@@ -6,4 +6,4 @@
 [Frontend](./ui/README-frontend.md)
 
 ## Workflow Setup Instructions
-[Workflow Setup](./.github/workflows)
+[Workflow Setup](./.github/workflows/README-workflow.md)
