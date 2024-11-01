@@ -77,6 +77,9 @@ Resume suggestions
 Cover letter generation
 * Users can now generate cover letters for a specific job application with their resume! It makes it super convenient for jobs that keep asking for you to write 300+ words!
 
+Cover Letters and Resume Suggestions can be downloaded
+* Users can download the AI generated content as a .txt file to save!
+
 Ollama integration
 * We've integrated Llama3.2, a powerful AI system that gives seamless responses. Even better is that it is open source! You won't have to worry about cost!
 
