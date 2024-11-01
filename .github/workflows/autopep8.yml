@@ -29,4 +29,4 @@ jobs:
     - name: Static analysis with autopep8
       run: |
         pip install --upgrade autopep8
-        autopep8 -v --aggressive --exit-code backend/app.py && autopep8 -v --aggressive --exit-code backend/applications.py && autopep8 -v --aggressive --exit-code backend/auth.py && autopep8 -v --aggressive --exit-code backend/files.py && autopep8 -v --aggressive --exit-code backend/ollama_connect.py && autopep8 -v --aggressive --exit-code backend/questions.py && autopep8 -v --aggressive --exit-code backend/resume_extract.py
+        autopep8 -v --aggressive --in-place --exit-code backend/app.py && autopep8 -v --aggressive --in-place --exit-code backend/applications.py && autopep8 -v --aggressive --in-place --exit-code backend/auth.py && autopep8 -v --aggressive --in-place --exit-code backend/files.py && autopep8 -v --aggressive --in-place --exit-code backend/ollama_connect.py && autopep8 -v --aggressive --in-place --exit-code backend/questions.py && autopep8 -v --aggressive --in-place --exit-code backend/resume_extract.py
