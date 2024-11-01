@@ -54,4 +54,4 @@ People *love* thorough bug reports. I'm not even kidding.
 By contributing, you agree that your contributions will be licensed under its MIT License.
 
 ## Code of conduct
-Please read the [CODE OF CONDUCT](https://github.com/ekanshsinghal/se-group26-proj1/blob/main/CODE_OF_CONDUCT.md)
+Please read the [CODE OF CONDUCT](./CODE_OF_CONDUCT.md)

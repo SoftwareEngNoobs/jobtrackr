@@ -43,10 +43,11 @@
 - [License](./LICENSE)
 - [Tools](#tools)
 - [Contributors](#contributors)
+- [Help](#help)
 
 ## Description
 
-Excel sheets that are complex and disorganized must go! Every job-related data can be managed by our JobTrackr Application, including your job profile, applications, status, important dates, notes, saved applications, job descriptions, recruiter details, compensation and offer package, and more. It even supports even managing your files and offers a Question Answer Scratchpad for you to save answers to commonly asked questions during job applications. Now, we've pushed the limits to make your process even more convenient. Need to improve your resume? Do you need to create cover letters? Don't worry, we now support resume suggestions and cover letter creation with AI!
+Are you someone in the process of looking for a job? Then you can relate to the tiresome and inefficient process. Therefore, excel sheets that are complex and disorganized must go! Every job-related data can be managed by our JobTrackr Application, including your job profile, applications, status, important dates, notes, saved applications, job descriptions, recruiter details, compensation and offer package, and more. It even supports even managing your files and offers a Question Answer Scratchpad for you to save answers to commonly asked questions during job applications. Now, we've pushed the limits to make your process even more convenient. Need to improve your resume? Do you need to create cover letters? Don't worry, we now support resume suggestions and cover letter creation with AI!
 
 ## What's New?
 ### Before
@@ -194,3 +195,8 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Help
+Need help?
+
+If you need any help with our software, please contact jobtrackr.github@gmail.com.
