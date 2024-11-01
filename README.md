@@ -43,6 +43,7 @@
 - [License](./LICENSE)
 - [Tools](#tools)
 - [Contributors](#contributors)
+- [Help](#help)
 
 ## Description
 
@@ -194,3 +195,8 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Help
+Need help?
+
+If you need any help with our software, please contact jobtrackr.github@gmail.com.
