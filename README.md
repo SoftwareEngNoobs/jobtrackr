@@ -13,9 +13,10 @@
 
 ![Open issues](https://img.shields.io/github/issues-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr)
 ![Closed issues](https://img.shields.io/github/issues-closed-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=bright-green)
-[![frontend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml)
+[![Frontend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml)
 [![Backend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml)
 [![Backend-Test](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml)
+[![Style-Checker](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml)
 
 ![Repo Size](https://img.shields.io/github/repo-size/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/CSC510-Do-Lorenc-McDavitt/jobtrackr)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/releases/)
@@ -134,7 +135,7 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 
 ## Application Demo
 
-[![JobTrackr App Demo](https://img.youtube.com/vi/3UecpZQn07E/maxresdefault.jpg)](https://youtu.be/pfs38jh5hPs)
+[![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/pfs38jh5hPs)
 
 
 ## Getting Started - Developer
@@ -171,6 +172,13 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 - [ngrok](https://ngrok.com/)
 - [Ollama](https://ollama.com/)
 - [Llama3.2](https://ollama.com/library/llama3.2)
+
+## Future Milestones
+- Drag and Drop Kanban Board
+- Upload Generated Cover Letters
+- Host the application on AWS EC2
+- Web Scraper for Job Descriptions from Indeed
+- Markdown formatting for notes
 
 ## Contributors
 
