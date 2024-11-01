@@ -19,6 +19,8 @@
 [![Backend-Test](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml)
 [![Style-Checker](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml)
 
+[![Autopep8](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/autopep8.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/autopep8.yml)
+
 ![Repo Size](https://img.shields.io/github/repo-size/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/CSC510-Do-Lorenc-McDavitt/jobtrackr)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/releases/)
 [![codecov](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr)
