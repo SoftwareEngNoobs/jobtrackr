@@ -86,7 +86,7 @@ UI update! Dropdown and company logos can now be added!
 * Logos
   * You can now insert image links to display company logos on applications! This is for aesthetics! Now you can look at pictures instead of just looking only at text.
 
-https://user-images.githubusercontent.com/39649967/205716460-d45bbad7-6222-4a0d-9bb1-bbd808db53a2.mp4
+[![JobTrackr Animated Video](https://img.youtube.com/vi/z4bh9J7PbMI/maxresdefault.jpg)](https://youtu.be/z4bh9J7PbMI)
 
 ## Development Tech Stack
 
