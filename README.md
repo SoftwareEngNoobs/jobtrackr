@@ -3,6 +3,7 @@
 <p align="center">
   <img src="./ui/assets/LogoWithTagline.png" alt="Logo"/>
 </p>
+
 [![DOI](https://zenodo.org/badge/870736387.svg)](https://doi.org/10.5281/zenodo.14020850)
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub](https://img.shields.io/badge/Language-JavaScript-blue.svg)
