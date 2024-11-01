@@ -11,7 +11,6 @@ from pymongo import ReturnDocument
 
 
 def delete_question(Questions):
-    
     '''
     Delete a question from the system for the given user.
     ```
@@ -24,11 +23,11 @@ def delete_question(Questions):
     {
         status: boolean
         data: message (Success / Error message as per status)
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()
@@ -47,7 +46,6 @@ def delete_question(Questions):
 
 
 def add_question(Questions):
-    
     '''
     Add a question to the system for the given user.
     ```
@@ -61,11 +59,11 @@ def add_question(Questions):
     {
         status: boolean
         data: message (Success / Error message as per status)
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()
@@ -85,7 +83,6 @@ def add_question(Questions):
 
 
 def view_questions(Questions):
-    
     '''
     View questions in the system for the given user.
     ```
@@ -97,14 +94,14 @@ def view_questions(Questions):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             email = request.args.get("email")
@@ -124,7 +121,6 @@ def view_questions(Questions):
 
 
 def modify_question(Questions):
-    
     '''
     Modifies a question in the system for a given user.
     ```
@@ -139,14 +135,14 @@ def modify_question(Questions):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()

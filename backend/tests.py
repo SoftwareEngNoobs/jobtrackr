@@ -5,20 +5,23 @@ as well as a possible way the user could deviate from the expected
 use case.
 """
 
+from backend.app import app
 from unittest.main import main
 import bcrypt
 from bson import ObjectId
 from flask import app
 import unittest
-import sys, os, inspect
+import sys
+import os
+import inspect
 import json
 
 from pymongo import MongoClient
 
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+currentdir = os.path.dirname(os.path.abspath(
+    inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
-from backend.app import app
 db1 = os.getenv('MONGO_DB_CONNECTION', "mongodb://localhost:27017/")
 db2 = "?retryWrites=true&w=majority"
 db = db1 + db2
@@ -30,60 +33,65 @@ UserProfiles = db.Profiles
 Questions = db.QA
 Files = db.file
 
+
 class FlaskTest(unittest.TestCase):
-    
+
     def setUp(self):
         # Insert test data here
         hashed = bcrypt.hashpw(
-                "12345678".encode("utf-8"), bcrypt.gensalt())
-        user_input = {"name": "dhrumil", "email": "dhrumilshah1234@gmail.com", "password": hashed}
+            "12345678".encode("utf-8"), bcrypt.gensalt())
+        user_input = {"name": "dhrumil",
+                      "email": "dhrumilshah1234@gmail.com", "password": hashed}
         UserRecords.insert_one(user_input)
         application = {
-                "_id": ObjectId("638eb81bff4164e60179bab2"),
-                "email": "dhrumilshah1234@gmail.com",
-                "companyName": "Lexis Nexis",
-                "jobTitle": "Software Engineer",
-                "jobId": "12345",
-                "description": "Not much",
-                "url": "https://www.google.com",
-                "date": None,
-                "status": "Accepted",
-                "image": None
-            }
+            "_id": ObjectId("638eb81bff4164e60179bab2"),
+            "email": "dhrumilshah1234@gmail.com",
+            "companyName": "Lexis Nexis",
+            "jobTitle": "Software Engineer",
+            "jobId": "12345",
+            "description": "Not much",
+            "url": "https://www.google.com",
+            "date": None,
+            "status": "Accepted",
+            "image": None
+        }
         Questions.insert_one({"email": "dhrumilshah1234@gmail.com", "_id": ObjectId("638bafe50012ef455196cc6e"),
-                               "question": "aa", "answer": "bb"})
+                              "question": "aa", "answer": "bb"})
         Applications.insert_one(application)
         UserRecords.delete_one({"email": "rrangar@ncsu.edu"})
-        Files.insert_one({"_id": ObjectId("66f5d5ed19e1859f9d89676f"), 
-                          "email": "dhrumilshah1234@gmail.com", 
+        Files.insert_one({"_id": ObjectId("66f5d5ed19e1859f9d89676f"),
+                          "email": "dhrumilshah1234@gmail.com",
                           "filename": "1234568--;--testing.pdf"})
-    
+
     def tearDown(self):
         # Clear the mock data after each test
-        UserRecords.delete_one({"name": "dhrumil", "email": "dhrumilshah1234@gmail.com"})
+        UserRecords.delete_one(
+            {"name": "dhrumil", "email": "dhrumilshah1234@gmail.com"})
         Applications.delete_one({"_id": ObjectId("638eb81bff4164e60179bab2"),
-                "email": "dhrumilshah1234@gmail.com"})
+                                 "email": "dhrumilshah1234@gmail.com"})
         Applications.delete_many({"email": "dhrumilshah1234@gmail.com"})
         Questions.delete_many({"email": "dhrumilshah1234@gmail.com"})
         Files.delete_one({"_id": ObjectId("66f5d5ed19e1859f9d89676f")})
 
-
     def testLogin(self):
         tester = app.test_client(self)
-        response = tester.post("/login", json={"email": "dhrumilshah1234@gmail.com", "password": "12345678"})
+        response = tester.post(
+            "/login", json={"email": "dhrumilshah1234@gmail.com", "password": "12345678"})
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
     def testWrongLogin(self):
         tester = app.test_client(self)
-        response = tester.post("/login", json={"email": "xyz@ncsu.edu", "password": "jytfyjtyj"})
+        response = tester.post(
+            "/login", json={"email": "xyz@ncsu.edu", "password": "jytfyjtyj"})
         statuscode = response.status_code
         # User account not found
         self.assertEqual(statuscode, 400)
 
     def testWrongLoginPassword(self):
         tester = app.test_client(self)
-        response = tester.post("/login", json={"email": "dhrumilshah1234@gmail.com", "password": "jytfyjtyj"})
+        response = tester.post(
+            "/login", json={"email": "dhrumilshah1234@gmail.com", "password": "jytfyjtyj"})
         statuscode = response.status_code
         # User password not correct
         self.assertEqual(statuscode, 400)
@@ -97,11 +105,11 @@ class FlaskTest(unittest.TestCase):
         req["password"] = "12345678"
         req["confirmPassword"] = "12345678"
         urlToSend = "/register"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         # New user created
         self.assertEqual(statuscode, 200)
-    
+
     def testWrongRegisterExistingEmail(self):
         tester = app.test_client(self)
         req = {}
@@ -111,7 +119,7 @@ class FlaskTest(unittest.TestCase):
         req["password"] = "12345678"
         req["confirmPassword"] = "12345678"
         urlToSend = "/register"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
@@ -124,16 +132,16 @@ class FlaskTest(unittest.TestCase):
         req["password"] = "12345678"
         req["confirmPassword"] = "123456789"
         urlToSend = "/register"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
     def testdeletewrongApplication(self):
         tester = app.test_client(self)
-        response = tester.post("/delete_application", json={"email": "dhrumilshah1234@gmail.com", "_id": "63800dfd2bf155063a7afbd9"})
+        response = tester.post("/delete_application", json={
+                               "email": "dhrumilshah1234@gmail.com", "_id": "63800dfd2bf155063a7afbd9"})
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
-
 
     def testViewApplication(self):
         tester = app.test_client(self)
@@ -142,7 +150,6 @@ class FlaskTest(unittest.TestCase):
         response = tester.get(urlToSend)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
-
 
     def testViewQuestions(self):
         tester = app.test_client(self)
@@ -154,10 +161,10 @@ class FlaskTest(unittest.TestCase):
 
     def testdeletewrongQuestions(self):
         tester = app.test_client(self)
-        response = tester.post("/delete_question", json={"email": "dhrumilshah1234@gmail.com", "_id": "63800dfd2bf155063a7afbd9"})
+        response = tester.post(
+            "/delete_question", json={"email": "dhrumilshah1234@gmail.com", "_id": "63800dfd2bf155063a7afbd9"})
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
-
 
     def testAddApplication(self):
         tester = app.test_client(self)
@@ -169,10 +176,9 @@ class FlaskTest(unittest.TestCase):
         req["url"] = "www.google.com"
         req["status"] = "applied"
         urlToSend = "/add_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
-
 
     def testAddQuestion(self):
         tester = app.test_client(self)
@@ -181,7 +187,7 @@ class FlaskTest(unittest.TestCase):
         req["question"] = "Why do you want to apply to this Job?"
         req["answer"] = "Because i want money and you are Hiring"
         urlToSend = "/add_question"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -200,46 +206,46 @@ class FlaskTest(unittest.TestCase):
             "image": ""
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
     def testModifyQuestion(self):
         tester = app.test_client(self)
         req = {
-         "question": "Q1",
-         "answer": "A1",
-        "_id": "638bafe50012ef455196cc6e",
-        "email": "dhrumilshah1234@gmail.com"
+            "question": "Q1",
+            "answer": "A1",
+            "_id": "638bafe50012ef455196cc6e",
+            "email": "dhrumilshah1234@gmail.com"
         }
         urlToSend = "/modify_question"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
     def testWrongEmailModifyQuestion(self):
         tester = app.test_client(self)
         req = {
-         "question": "Q1",
-         "answer": "A1",
-        "_id": "638bafe50012ef455196cc6e",
-        "email": "a@a.com"
+            "question": "Q1",
+            "answer": "A1",
+            "_id": "638bafe50012ef455196cc6e",
+            "email": "a@a.com"
         }
         urlToSend = "/modify_question"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
     def testWrongModifyQuestion(self):
         tester = app.test_client(self)
         req = {
-         "question": "Q1",
-         "answer": "A1",
-        "_id": "IDONTEXIST",
-        "email": "dhrumilshah1234@gmail.com"
+            "question": "Q1",
+            "answer": "A1",
+            "_id": "IDONTEXIST",
+            "email": "dhrumilshah1234@gmail.com"
         }
         urlToSend = "/modify_question"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         # Since the ID doesnt exist.
         self.assertEqual(statuscode, 400)
@@ -258,7 +264,7 @@ class FlaskTest(unittest.TestCase):
             "email": "dhrumilshah1234@gmail.com"
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
@@ -277,7 +283,7 @@ class FlaskTest(unittest.TestCase):
             "image": ""
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
@@ -296,7 +302,7 @@ class FlaskTest(unittest.TestCase):
             "image": "www.google.com"
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -314,7 +320,7 @@ class FlaskTest(unittest.TestCase):
             "email": "dhrumilshah1234@gmail.com",
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -332,7 +338,7 @@ class FlaskTest(unittest.TestCase):
             "email": "dhrumilshah1234@gmail.com"
         }
         urlToSend = "/modify_application"
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 400)
 
@@ -380,7 +386,7 @@ class FlaskTest(unittest.TestCase):
             "context": "I want to be good at programaming",
             "job_desc": "We want embedded engineers."
         }
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -393,7 +399,7 @@ class FlaskTest(unittest.TestCase):
             "context": "I want to be good at programaming",
             "job_desc": "We want embedded engineers."
         }
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -406,9 +412,10 @@ class FlaskTest(unittest.TestCase):
             "file": "",
             "job_desc": "We want embedded engineers."
         }
-        response = tester.post(urlToSend, json = req)
+        response = tester.post(urlToSend, json=req)
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
-if __name__=="__main__":
-     unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

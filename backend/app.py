@@ -36,7 +36,6 @@ Files = db.file
 
 @app.route("/")
 def hello():
-
     '''
     ```
     Welcome Page
@@ -48,7 +47,6 @@ def hello():
 
 @app.route("/register", methods=["post"])
 def register():
-
     '''
     ```
     Register if you do not already have an account
@@ -60,7 +58,6 @@ def register():
 
 @app.route("/login", methods=["POST"])
 def login():
-
     '''
     ```
     Login to get to the dashboard to access various functions
@@ -72,7 +69,6 @@ def login():
 
 @app.route("/logout", methods=["POST", "GET"])
 def logout():
-
     '''
     ```
     Log out of your account
@@ -84,7 +80,6 @@ def logout():
 
 @app.route("/view_applications", methods=["GET"])
 def view_applications():
-
     '''
     ```
     View applications associated with the selected email ID
@@ -96,7 +91,6 @@ def view_applications():
 
 @app.route("/view_questions", methods=["GET"])
 def view_questions():
-
     '''
     ```
     View questions associated with the selected email ID
@@ -108,7 +102,6 @@ def view_questions():
 
 @app.route("/add_application", methods=["POST"])
 def add_application():
-
     '''
     ```
     Add application to an account with selected email ID.
@@ -120,7 +113,6 @@ def add_application():
 
 @app.route("/add_question", methods=["POST"])
 def add_question():
-
     '''
     ```
     Add question to a profile with selected email ID.
@@ -132,7 +124,6 @@ def add_question():
 
 @app.route("/delete_application", methods=["POST"])
 def delete_application():
-
     '''
     ```
     Delete application associated with selected email.
@@ -144,7 +135,6 @@ def delete_application():
 
 @app.route("/delete_question", methods=["POST"])
 def delete_question():
-
     '''
     ```
     Delete question to a profile with selected email.
@@ -156,7 +146,6 @@ def delete_question():
 
 @app.route("/modify_application", methods=["POST"])
 def modify_application():
-
     '''
     ```
     Modify application.
@@ -168,7 +157,6 @@ def modify_application():
 
 @app.route("/modify_question", methods=["POST"])
 def modify_question():
-
     '''
     ```
     Modify question to a profile with selected email ID.
@@ -180,7 +168,6 @@ def modify_question():
 
 @app.route("/create_profile", methods=["post"])
 def create_profile():
-
     '''
     ```
     Creating profile
@@ -192,7 +179,6 @@ def create_profile():
 
 @app.route("/view_profile", methods=["GET"])
 def view_profile():
-
     '''
     ```
     View profile
@@ -204,7 +190,6 @@ def view_profile():
 
 @app.route("/modify_profile", methods=["POST"])
 def modify_profile():
-
     '''
     ```
     Modify profile
@@ -216,7 +201,6 @@ def modify_profile():
 
 @app.route("/clear_profile", methods=["POST"])
 def clear_profile():
-
     '''
     ```
     View profile
@@ -228,7 +212,6 @@ def clear_profile():
 
 @app.route("/upload_file", methods=["GET", "POST"])
 def upload_file():
-
     '''
     ```
     Uploads file to Amazon S3 bucket
@@ -240,7 +223,6 @@ def upload_file():
 
 @app.route("/view_files", methods=["GET"])
 def view_files():
-
     '''
     ```
     View your files directly from cloud
@@ -252,7 +234,6 @@ def view_files():
 
 @app.route("/download_file", methods=["POST"])
 def download_file():
-
     '''
     ```
     View your files directly from cloud
@@ -263,7 +244,6 @@ def download_file():
 
 @app.route("/delete_file", methods=["POST"])
 def delete_file():
-
     '''
     ```
     Delete one's files from cloud storage
@@ -297,7 +277,7 @@ def generate_cv():
         req["context"]
         if "context" in req.keys() and len(req["context"]) > 0
         else ""
-        )
+    )
 
     return ollama_connect.generate_cv(resume, job_desc, context)
 
