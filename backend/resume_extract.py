@@ -7,6 +7,7 @@ and providing resume suggestions.
 
 import PyPDF2
 
+
 def extract_text_from_pdf(pdf_path):
     """
     Extracts and returns the text in the pdf at the given path.

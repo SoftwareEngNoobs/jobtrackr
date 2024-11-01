@@ -11,7 +11,6 @@ import bcrypt
 
 
 def register(UserRecords):
-    
     '''
     Registers a new user into the system.
     ```
@@ -27,14 +26,14 @@ def register(UserRecords):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         req = request.get_json()
         name = {"firstName": req["firstName"], "lastName": req["lastName"]}
@@ -60,7 +59,6 @@ def register(UserRecords):
 
 
 def login(UserRecords):
-    
     '''
     Attempts to login a user with the provided email and password.
     ```
@@ -73,14 +71,14 @@ def login(UserRecords):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         req = request.get_json()
         email = req["email"]
@@ -102,20 +100,19 @@ def login(UserRecords):
 
 
 def logout():
-    
     '''
     Logs out the current user from the system.
     ```
     Request:
     {
-        
+
     }
     Response:
     {
         data: message (Success)
-        
+
     }
     ```
     '''
-    
+
     return jsonify({'message': 'Logout successful'}), 200

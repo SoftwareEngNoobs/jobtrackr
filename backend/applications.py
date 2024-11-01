@@ -11,7 +11,6 @@ from pymongo import ReturnDocument
 
 
 def view_applications(Applications):
-    
     '''
     Returns the job applications that the user has active in the system.
     ```
@@ -23,14 +22,14 @@ def view_applications(Applications):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             email = request.args.get("email")
@@ -51,7 +50,6 @@ def view_applications(Applications):
 
 
 def add_application(Applications):
-    
     '''
     Adds an application to the system for the given user.
     ```
@@ -70,14 +68,14 @@ def add_application(Applications):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()
@@ -103,7 +101,6 @@ def add_application(Applications):
 
 
 def delete_application(Applications):
-    
     '''
     Deletes an application from the system for the given user.
     ```
@@ -111,19 +108,19 @@ def delete_application(Applications):
     {
         email: email,
         jobId: number
-    
+
     Response:
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()
@@ -141,7 +138,6 @@ def delete_application(Applications):
 
 
 def modify_application(Applications):
-    
     '''
     Modifies an application for the given user.
     ```
@@ -161,10 +157,10 @@ def modify_application(Applications):
     {
         status: 200
         data: Success message
-        
+
         status: 400
         data: Error message
-        
+
     }
     ```
     '''
@@ -204,4 +200,3 @@ def modify_application(Applications):
             return jsonify({"error": "No such Job ID found for this user's email"}), 400
         else:
             return jsonify({"message": "Job Application modified successfully"}), 200
-        

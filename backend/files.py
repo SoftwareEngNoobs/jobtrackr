@@ -25,7 +25,6 @@ bucket_name = "job-tracker-resume-upload"
 
 
 def upload_file(UserRecords, Files):
-    
     '''
     Uploads a file to the system for the given user using AWS S3.
     ```
@@ -36,20 +35,20 @@ def upload_file(UserRecords, Files):
         file: file,
         end: string,
         filename: string
-        
+
     }
     Response:
     {
         status: 200
         data: Success message
-        
+
         status: 500
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         file = request.files['file']
         email = str(request.files['email'].read())
@@ -82,7 +81,6 @@ def upload_file(UserRecords, Files):
 
 
 def view_files(Files):
-    
     '''
     Retrieves the files for the given user that were uploaded to AWS S3.
     ```
@@ -94,14 +92,14 @@ def view_files(Files):
     {
         status: 200
         data: Success message
-        
+
         status: 500
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             email = request.args.get("email")
@@ -122,6 +120,7 @@ def view_files(Files):
         print(e)
         return jsonify({'error': "Something went wrong"}), 500
 
+
 def get_pdf_info(file_req_name, Files, email):
     """
     Helper function to extract the values from a pdf
@@ -129,43 +128,44 @@ def get_pdf_info(file_req_name, Files, email):
     """
     try:
         if request:
-                file = Files.find_one({"filename": file_req_name})
-                if not str(file["filename"]).endswith(".pdf"):
-                    return ""
-                if file:
-                    if file["email"] == email:
-                        s3.download_file(
-                            bucket_name, file["filename"], file_req_name.split("--;--")[1])
-                        output = extract_text_from_pdf(file_req_name.split("--;--")[1])
-                        os.remove(file_req_name.split("--;--")[1])
-                        return output
+            file = Files.find_one({"filename": file_req_name})
+            if not str(file["filename"]).endswith(".pdf"):
+                return ""
+            if file:
+                if file["email"] == email:
+                    s3.download_file(
+                        bucket_name, file["filename"], file_req_name.split("--;--")[1])
+                    output = extract_text_from_pdf(
+                        file_req_name.split("--;--")[1])
+                    os.remove(file_req_name.split("--;--")[1])
+                    return output
     except Exception:
         return ""
 
+
 def download_file(Files):
-    
     '''
     Downloads the given file to the client machine from AWS S3.
     ```
     Request:
     {
-         
+
     }
     Response:
     {
         status: 200
         data: Success message
-        
+
         status: 500
         data: Error message
-        
+
         status: 501
         data: Authorization required
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()
@@ -179,8 +179,8 @@ def download_file(Files):
                         file_output = f.read()
 
                     os.remove(req["filename"].split("--;--")[1])
-                    return send_file(io.BytesIO(file_output), 
-                                     as_attachment=True, 
+                    return send_file(io.BytesIO(file_output),
+                                     as_attachment=True,
                                      download_name=req["filename"].split("--;--")[1])
                 else:
                     return jsonify({'message': 'You are not authorized to view this file'}), 501
@@ -191,7 +191,6 @@ def download_file(Files):
 
 
 def delete_file(Files):
-    
     '''
     Deletes a file from the system for the given user from AWS S3.
     ```
@@ -202,14 +201,14 @@ def delete_file(Files):
     {
         status: 200
         data: Success message
-        
+
         status: 500
         data: Error message
-        
+
     }
     ```
     '''
-    
+
     try:
         if request:
             req = request.get_json()

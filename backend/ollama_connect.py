@@ -48,7 +48,8 @@ example_files_suggest = [
 - Create a digital portfolio to showoff Projects"""
 ]
 
-def generate_cv(resume, job_desc, context = ""):
+
+def generate_cv(resume, job_desc, context=""):
     """
     Generates a cover letter from a resume and a job description. 
     The resume content is extracted from a pdf in the application, 
@@ -67,14 +68,14 @@ def generate_cv(resume, job_desc, context = ""):
     {
         status: boolean
         data: message (Success / Error message as per status)
-        
+
     }
     ```
     """
     try:
         if request:
             messages = [
-                ("system",system_prompt_cv,),
+                ("system", system_prompt_cv,),
                 ("human", "Resume: " + resume),
                 ("human", "Additional Requests and Context: " + context),
                 ("human", "Job Description: " + job_desc),
@@ -89,7 +90,8 @@ def generate_cv(resume, job_desc, context = ""):
 
     except Exception:
         return jsonify({'error': "Something went wrong"}), 400
-    
+
+
 def resume_suggest(resume, job_desc):
     """
     Reviews a resume and provides suggestions to tailor it for a job description.
@@ -104,14 +106,14 @@ def resume_suggest(resume, job_desc):
     {
         status: boolean
         data: message (Success / Error message as per status)
-        
+
     }
     ```
     """
     try:
         if request:
             messages = [
-                ("system",system_prompt_suggest,),
+                ("system", system_prompt_suggest,),
                 ("human", "Resume: " + resume),
                 ("human", "Job Description: " + job_desc),
             ]
