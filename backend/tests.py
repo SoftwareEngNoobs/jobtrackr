@@ -5,7 +5,6 @@ as well as a possible way the user could deviate from the expected
 use case.
 """
 
-from backend.app import app
 from unittest.main import main
 import bcrypt
 from bson import ObjectId
@@ -22,6 +21,7 @@ currentdir = os.path.dirname(os.path.abspath(
     inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
+from backend.app import app
 db1 = os.getenv('MONGO_DB_CONNECTION', "mongodb://localhost:27017/")
 db2 = "?retryWrites=true&w=majority"
 db = db1 + db2
