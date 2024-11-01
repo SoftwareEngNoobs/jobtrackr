@@ -103,51 +103,66 @@ not have a method with the specified name.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class FlaskTest(unittest.TestCase):
-   
+
     def test_zero_shot_Cynthia_Lenovo(self):
-        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;)
+        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;)
 
     def test_zero_shot_Ava_EpicGames(self):
-        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;)
+        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;,
+                         &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;)
 
     def test_zero_shot_Charles_Fidelity(self):
-        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;)
+        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;)
 
     def test_zero_shot_Cynthia_RedHat(self):
-         suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;)
+        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;)
 
     def test_zero_shot_Charles_Apple(self):
-        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;)
+        suggestions_test(self, &#34;suggestion_zero_shot.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;)
 
     def test_one_shot_Cynthia_Lenovo(self):
-        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
 
     def test_one_shot_Ava_EpicGames(self):
-        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;,
+                         &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
 
     def test_one_shot_Charles_Fidelity(self):
-        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
 
     def test_one_shot_Cynthia_RedHat(self):
-         suggestions_test(self, &#34;suggestion_one_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
 
     def test_one_shot_Charles_Apple(self):
-        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)
 
     def test_one_shot_long_Cynthia_Lenovo(self):
-        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
 
     def test_one_shot_long_Ava_EpicGames(self):
-        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;,
+                         &#34;ava_johnson.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
 
     def test_one_shot_long_Charles_Fidelity(self):
-        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
 
     def test_one_shot_long_Cynthia_RedHat(self):
-         suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
+        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;,
+                         &#34;cynthia_dwayne.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
 
     def test_one_shot_long_Charles_Apple(self):
-        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)</code></pre>
+        suggestions_test(self, &#34;suggestion_one_shot_long.txt&#34;,
+                         &#34;charles_mcturland.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">

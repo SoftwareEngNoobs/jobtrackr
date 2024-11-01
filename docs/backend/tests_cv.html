@@ -104,64 +104,81 @@ not have a method with the specified name.</p></div>
 </summary>
 <pre><code class="python">class FlaskTest(unittest.TestCase):
     def test_zero_shot_Charles_Lenovo(self):
-        cv_test(self, &#34;cv_zero_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;lenovo.txt&#34;)
+        cv_test(self, &#34;cv_zero_shot.txt&#34;,
+                &#34;charles_mcturland.txt&#34;, &#34;lenovo.txt&#34;)
 
     def test_zero_shot_Cynthia_Fidelity(self):
         cv_test(self, &#34;cv_zero_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;fidelity.txt&#34;)
-    
+
     def test_zero_shot_Ava_RedHat(self):
         cv_test(self, &#34;cv_zero_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;redhat.txt&#34;)
-    
+
     def test_zero_shot_Charles_EpicGames(self):
-        cv_test(self, &#34;cv_zero_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;epicgames.txt&#34;)
-    
+        cv_test(self, &#34;cv_zero_shot.txt&#34;,
+                &#34;charles_mcturland.txt&#34;, &#34;epicgames.txt&#34;)
+
     def test_zero_shot_Ava_Apple(self):
         cv_test(self, &#34;cv_zero_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;apple.txt&#34;)
-    
+
     def test_one_shot_Charles_Lenovo(self):
-        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;lenovo.txt&#34;, one_shot_examples)
+
     def test_one_shot_Cynthia_Fidelity(self):
-        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;,
+                &#34;fidelity.txt&#34;, one_shot_examples)
+
     def test_one_shot_Ava_RedHat(self):
-        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;redhat.txt&#34;, one_shot_examples)
+
     def test_one_shot_Charles_EpicGames(self):
-        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;epicgames.txt&#34;, one_shot_examples)
+
     def test_one_shot_Ava_Apple(self):
-        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;apple.txt&#34;, one_shot_examples)
+
     def test_one_shot_long_Charles_Lenovo(self):
-        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;lenovo.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;lenovo.txt&#34;, one_shot_examples)
+
     def test_one_shot_long_Cynthia_Fidelity(self):
-        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;fidelity.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;cynthia_dwayne.txt&#34;,
+                &#34;fidelity.txt&#34;, one_shot_examples)
+
     def test_one_shot_long_Ava_RedHat(self):
-        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;redhat.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;redhat.txt&#34;, one_shot_examples)
+
     def test_one_shot_long_Charles_EpicGames(self):
-        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;epicgames.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;epicgames.txt&#34;, one_shot_examples)
+
     def test_one_shot_long_Ava_Apple(self):
-        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;apple.txt&#34;, one_shot_examples)
-    
+        cv_test(self, &#34;cv_one_shot_long.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;apple.txt&#34;, one_shot_examples)
+
     def test_few_shot_Charles_Lenovo(self):
-        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;lenovo.txt&#34;, few_shot_examples)
-    
+        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;lenovo.txt&#34;, few_shot_examples)
+
     def test_few_shot_Cynthia_Fidelity(self):
-        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;, &#34;fidelity.txt&#34;, few_shot_examples)
-    
+        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;cynthia_dwayne.txt&#34;,
+                &#34;fidelity.txt&#34;, few_shot_examples)
+
     def test_few_shot_Ava_RedHat(self):
-        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;redhat.txt&#34;, few_shot_examples)
-    
+        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;redhat.txt&#34;, few_shot_examples)
+
     def test_few_shot_Charles_EpicGames(self):
-        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;charles_mcturland.txt&#34;, &#34;epicgames.txt&#34;, few_shot_examples)
-    
+        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;charles_mcturland.txt&#34;,
+                &#34;epicgames.txt&#34;, few_shot_examples)
+
     def test_few_shot_Ava_Apple(self):
-        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;ava_johnson.txt&#34;, &#34;apple.txt&#34;, few_shot_examples)</code></pre>
+        cv_test(self, &#34;cv_few_shot.txt&#34;, &#34;ava_johnson.txt&#34;,
+                &#34;apple.txt&#34;, few_shot_examples)</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">

@@ -77,25 +77,28 @@ not have a method with the specified name.</p></div>
 </summary>
 <pre><code class="python">class FlaskTest(unittest.TestCase):
     def test_regular(self):
-        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;John Doe.pdf&#34;)), 
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;John Doe.pdf&#34;)),
                          &#34;John\nDoe&#34;)
-        
+
     def test_newline(self):
-        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;NewLine.pdf&#34;)), 
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;NewLine.pdf&#34;)),
                          &#34;Henry\nCash\nThis\nis\na\nsecond\nline.&#34;)
-        
+
     def test_split(self):
-        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;split.pdf&#34;)), 
+        self.assertEqual(extract_text_from_pdf(os.path.join(path, &#34;split.pdf&#34;)),
                          &#34;Henry\nCash\nThis\nis\na\nsecond\nline.\nThis\ntext\nis\nsplit&#34;)
-    
+
     def test_complex_footer(self):
-        self.assertTrue(&#34;REFERENCES AVAILABLE UPON REQUEST&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))
-    
+        self.assertTrue(&#34;REFERENCES AVAILABLE UPON REQUEST&#34; in extract_text_from_pdf(
+            os.path.join(path, &#34;resume-sample1.pdf&#34;)))
+
     def test_numbers(self):
-        self.assertTrue(&#34;4.00&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))
-    
+        self.assertTrue(&#34;4.00&#34; in extract_text_from_pdf(
+            os.path.join(path, &#34;resume-sample1.pdf&#34;)))
+
     def test_headers(self):
-        self.assertTrue(&#34;EDUCATION&#34; in extract_text_from_pdf(os.path.join(path, &#34;resume-sample1.pdf&#34;)))</code></pre>
+        self.assertTrue(&#34;EDUCATION&#34; in extract_text_from_pdf(
+            os.path.join(path, &#34;resume-sample1.pdf&#34;)))</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
