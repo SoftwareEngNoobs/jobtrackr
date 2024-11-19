@@ -13,8 +13,7 @@ env
 backend/cv_test_output
 backend/suggestions_test_output
 backend/seproj3venv
-
-
+backend/venv
 __pycache__
 
 # environment variables

@@ -1,9 +1,13 @@
 name: UI Build
 on:
   push:
-    branches: ["main"]
+    branches: 
+     - main
+     - release-*
   pull_request:
-    branches: ["main"]
+    branches: 
+     - main
+     - release-*
 jobs:
   build_test:
     runs-on: ubuntu-latest

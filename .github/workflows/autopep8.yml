@@ -5,9 +5,16 @@ name: autopep8
 
 on:
   push:
-    branches: [ "main", "autopep8" ]
+    branches:
+     - main
+     - release-*
+     - autopep8
+     
   pull_request:
-    branches: [ "main", "autopep8" ]
+    branches: 
+     - main
+     - release-*
+     - autopep8
 
 permissions:
   contents: read
