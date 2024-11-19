@@ -12,6 +12,7 @@ yarn-error.log*
 env
 backend/cv_test_output
 backend/suggestions_test_output
+backend/seproj3venv
 
 
 __pycache__
