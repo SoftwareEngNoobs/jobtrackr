@@ -25,8 +25,24 @@ export default function LandingPage() {
 	const { state } = useLocation();
 
 	const quickUpdateApplications = (application, updatedValue) => {
-		console.log(application);
-		console.log(updatedValue);
+		axios
+			.post(`${config.base_url}/modify_application`, {
+				companyName: application.companyName,
+				jobTitle: application.jobTitle,
+				jobId: application.jobId,
+				description: application.description,
+				url: application.url,
+				date: application.date,
+				status: updatedValue,
+				image: application.image,
+				_id: application._id,
+				email: state.email,
+			})
+			.then(({ data }) => {
+				message.success(data.message);
+				refresh();
+			})
+			.catch((err) => message.error(err.response.data?.error));
 	};
 
 	const handeDragEnd = (result) => {
