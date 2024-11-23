@@ -166,7 +166,7 @@ def modify_question():
     return questions.modify_question(Questions)
 
 
-@app.route("/create_profile", methods=["post"])
+@app.route("/create_profile", methods=["POST"])
 def create_profile():
     '''
     ```

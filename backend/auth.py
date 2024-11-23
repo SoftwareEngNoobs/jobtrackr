@@ -4,10 +4,11 @@ JobTrackr. There are functions to register a new user, login an
 existing user, and logout a currently logged in user.
 """
 
-from bson import ObjectId
+from bson.objectid import ObjectId
 from flask import request, session, jsonify
 from pymongo import ReturnDocument
 import bcrypt
+import json
 
 
 def register(UserRecords):
@@ -116,3 +117,64 @@ def logout():
     '''
 
     return jsonify({'message': 'Logout successful'}), 200
+
+
+def create_profile(UserProfiles):
+    '''
+    Creates the profile of the user. 
+    Request: 
+    {
+     email: string, 
+     first_name: string,
+     last_name: string, 
+     city: string,
+     state: string,
+     country: string,
+     education: json,
+     work_ex: json,
+     skills: list,
+    }
+    '''
+    try:
+        data = request.get_json()
+        email_found = UserProfiles.find_one({"email": data["email"]})
+        if email_found:
+            return jsonify({'error': "This email already exists in database"}), 400
+        else:
+            insert_result = UserProfiles.insert_one(data)
+            return jsonify({'message': "Profile created succesfully", 'id': f'{insert_result.inserted_id}'}), 201
+    except Exception as e:
+        print(e)
+        return jsonify({'message': "Error while creating the profile"}), 500
+
+def view_profile(UserProfiles):
+    '''
+        Returns user profile of the user, if it exists. 
+        Request: 
+        { 
+            user_id :  string
+        }
+        Response: 
+        {
+            email: string, 
+            first_name: string,
+            last_name: string, 
+            city: string,
+            state: string,
+            country: string,
+            education: json,
+            work_ex: json,
+            skills: list,
+        }
+    '''
+    try:
+        id = request.args.get("user_id")
+        object_id = ObjectId(id)
+        result = UserProfiles.find_one(object_id)
+        #print('is anything even printing')
+        print(type(result), result)
+        result['_id'] = str(result['_id'])
+        return jsonify({'message': 'Profile found', 'profile':result}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'message': "Error while viewing the profile"}), 500
