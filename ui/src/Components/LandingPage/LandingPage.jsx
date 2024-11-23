@@ -25,13 +25,45 @@ export default function LandingPage() {
 	const { state } = useLocation();
 
 	const quickUpdateApplications = (application, updatedValue) => {
-		console.log(application)
-		console.log(updatedValue)
-    }
-	
-	const handeDragEnd = (result) =>{
-		console.log(result)
-	}
+		console.log(application);
+		console.log(updatedValue);
+	};
+
+	const handeDragEnd = (result) => {
+		if (!result.destination) {
+			return;
+		}
+		const { source, destination } = result;
+		if (source.droppableId != destination.droppableId) {
+			var i = 0;
+			for (var app of applications) {
+				if (app._id == result.draggableId) {
+					if (destination.droppableId == '0') {
+						app.status = 'applied';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'applied');
+					} else if (destination.droppableId == '1') {
+						app.status = 'inReview';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'inReview');
+					} else if (destination.droppableId == '2') {
+						app.status = 'interview';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'interview');
+					} else {
+						app.status = 'accepted';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'accepted');
+					}
+				}
+				i += 1;
+			}
+		}
+	};
 
 	useEffect(() => {
 		updateApplications();
