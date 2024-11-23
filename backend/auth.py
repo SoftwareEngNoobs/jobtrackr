@@ -178,3 +178,74 @@ def view_profile(UserProfiles):
     except Exception as e:
         print(e)
         return jsonify({'message': "Error while viewing the profile"}), 500
+
+def modify_profile(UserProfiles):
+    '''
+    Edits the profile of the user. 
+    Request: 
+    {
+     profile_id: string,
+     email: string, 
+     first_name: string,
+     last_name: string, 
+     city: string,
+     state: string,
+     country: string,
+     education: json,
+     work_ex: json,
+     skills: list,
+    }
+    '''
+    try:
+        data = request.get_json()
+        _id = data["profile_id"]
+        email = data["email"]
+        filter = {'_id':ObjectId(_id), 'email':email}
+        profile = {
+            "email": email,
+            "first_name":data["first_name"],
+            "last_name": data["last_name"],
+            "city": data["city"],
+            "state":data["state"],
+            "country":data["country"],
+            "education":data["education"],
+            "work_ex":data["work_ex"],
+            "skills":data["skills"]
+        }
+        set_data = {"$set": profile}
+        modified_profile = UserProfiles.find_one_and_update(filter, set_data, return_document=ReturnDocument.AFTER)
+    except Exception as e:
+        print(e)
+        return jsonify({'error':'Unable to find profile.'}), 500
+    if modified_profile is None:
+        return jsonify({"error": "No profile found for this user"}), 404
+    else:
+        return jsonify({'message': 'User profile modified succesfully'}), 200
+
+def clear_profile(UserProfiles, UserRecords):
+    '''
+        Delete user profile of the user, if it exists. 
+        Request: 
+        { 
+            user_id :  string
+        }
+        Response: 
+        {
+        status: 200
+        data: Success message
+
+        status: 400
+        data: Error message
+        }
+    '''
+    try:
+        data = request.get_json()
+        _id = ObjectId(data["user_id"])
+        deleted_profile = UserProfiles.find_one_and_delete({"_id":_id})
+        if deleted_profile is None:
+            return jsonify({'error':'User profile does not exist'}), 404
+        else:
+            return jsonify({'message' : 'Profile deleted succesfully'}), 200 
+    except Exception as e:
+        print(e)
+        return jsonify({'error':'Error while deleting profile'}), 500 
