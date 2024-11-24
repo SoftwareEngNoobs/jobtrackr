@@ -12,7 +12,7 @@ import Profile from './Components/Profile/Profile';
 import './App.scss';
 import ManageFiles from './Components/ManageFiles/ManageFiles';
 import QA from './Components/QA/QA';
-import CoverLetter from './Components/CoverLetter/CoverLetter'
+import CoverLetter from './Components/CoverLetter/CoverLetter';
 import config from './config';
 import logo from '../assets/LogoJobTrackr.png';
 import { ResumeSuggestions } from './Components/ResumeSuggestions/ResumeSuggestions';
@@ -24,8 +24,8 @@ const signedInPages = {
 	'/interested': 'Saved Jobs',
 	'/files': 'Manage Files',
 	'/qa': 'Q & A',
-    '/cv': 'Cover Letter',
-	'/suggestions': 'Resume Suggestions'
+	'/cv': 'Cover Letter',
+	'/suggestions': 'Resume Suggestions',
 };
 
 export default function App() {
@@ -79,14 +79,17 @@ export default function App() {
 								mode="vertical"
 								style={{ width: 200 }}
 								items={[
-									// {
-									// 	key: 'profile',
-									// 	label: (
-									// 		<Button type='link' onClick={() => navigate('/profile', { state })}>
-									// 			My Profile
-									// 		</Button>
-									// 	),
-									// },
+									{
+										key: 'profile',
+										label: (
+											<Button
+												type="link"
+												onClick={() => navigate('/profile', { state })}
+											>
+												My Profile
+											</Button>
+										),
+									},
 									{
 										key: 'logout',
 										label: (
@@ -108,8 +111,9 @@ export default function App() {
 						<Route path="/interested" element={<SavedJobs />} />
 						<Route path="/files" element={<ManageFiles />} />
 						<Route path="/qa" element={<QA />} />
-                        <Route path="/cv" element={<CoverLetter />} />
+						<Route path="/cv" element={<CoverLetter />} />
 						<Route path="/suggestions" element={<ResumeSuggestions />} />
+						<Route path="/profile" element={<Profile />} />
 						<Route path="*" element={<Navigate to="/home" replace />} />
 					</Routes>
 				</Content>

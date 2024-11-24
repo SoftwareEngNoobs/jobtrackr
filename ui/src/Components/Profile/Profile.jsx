@@ -31,7 +31,7 @@ export default function Profile() {
 	const saveProfile = (values) => {
 		const loading = message.loading('Loading...', 0);
 		axios
-			.post('/api/create_profile', values)
+			.post(`${config.base_url}/create_profile`, values)
 			.then(() => message.success('Profile created.'))
 			.catch((err) => message.error(err.response.data?.error))
 			.finally(() => loading());
@@ -41,7 +41,7 @@ export default function Profile() {
 		form.validateFields()
 			.then((values) =>
 				axios
-					.post('/api/modify_profile', { ...values, _id: initialValues._id })
+					.post(`${config.base_url}/modify_profile`, { ...values, _id: initialValues._id })
 					.then(() => message.success('Profile Updated.'))
 					.catch(() => message.error('Failed to update the profile.'))
 			)
@@ -147,9 +147,6 @@ export default function Profile() {
 					<Form.Item label="State" name="jobState">
 						<Input />
 					</Form.Item>
-					<Form.Item label="Job Start/End Date" name="jobDate">
-						<DatePicker.RangePicker />
-					</Form.Item>
 					<Form.Item label="Description" name="description">
 						<Input.TextArea />
 					</Form.Item>
@@ -169,9 +166,6 @@ export default function Profile() {
 					</Form.Item>
 					<Form.Item label="State" name="universityState">
 						<Input />
-					</Form.Item>
-					<Form.Item label="Start/End Date" name="universityDate">
-						<DatePicker.RangePicker />
 					</Form.Item>
 					{profileExists ? (
 						<div
