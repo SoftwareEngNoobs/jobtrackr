@@ -196,7 +196,6 @@ def modify_profile(UserProfiles):
     '''
     try:
         data = request.get_json()
-        # _id = data["profile_id"]
         email = data["email"]
         filter = {'email': email}
         _id = UserProfiles.find_one(filter)["_id"]
