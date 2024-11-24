@@ -299,6 +299,7 @@ def resume_suggest():
     job_desc = req["job_desc"] if "job_desc" in req.keys() else ""
     return ollama_connect.resume_suggest(resume, job_desc)
 
+
 @app.route('/get_job_description', methods=['POST'])
 def get_job_description():
     data = request.json
