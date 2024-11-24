@@ -18,8 +18,8 @@ llm = ChatOllama(
 )
 
 system_prompt_cv = """
-You are a helpful assistant that writes a cover letter from a resume and a job description.
-Only respond with the cover letter and nothing else.
+ You are a helpful assistant that writes a cover letter from a resume and a job description.
+ Only respond with the cover letter and nothing else.
 """
 
 system_prompt_suggest = """
@@ -47,6 +47,59 @@ example_files_suggest = [
 - Provide a link to the project if possible
 - Create a digital portfolio to showoff Projects"""
 ]
+system_prompt_ats_score = """
+You are a helpful assistant that compares the skills in a resume and a job description.
+You will extract all the relevant skills from both the resume and the job description,
+compare them, and calculate a score based on how many skills match.
+
+Follow these steps:
+1. Extract skills from the resume and the job description.
+2. Compare the extracted skills.
+3. Calculate the ATS score using this formula:
+   Score (%) = (Number of Matched Skills / Total Skills in Job Description) * 100
+
+Respond with a JSON output in this format:
+{
+  "extracted_resume_skills": ["skill1", "skill2", "..."],
+  "extracted_job_skills": ["skillA", "skillB", "..."],
+  "matched_skills": ["skill1", "skill2", "..."],
+  "missing_skills": ["skill3", "..."],
+  "ats_score": "XX%"
+}
+"""
+
+def generate_ats_score(resume, job_desc):
+    """
+    Generates an ATS score by comparing skills in a resume and job description.
+    ```
+    Request:
+    {
+        resume: string,
+        job_desc: string,
+       
+    }
+    Response:
+    {
+        extracted_resume_skills: list,
+        extracted_job_skills: list,
+        matched_skills: list,
+        missing_skills: list,
+        ats_score: string
+    }
+    ```
+    """
+    try:
+        ats_score_messages = [
+                ("system", system_prompt_ats_score, ),
+                ("human", "Resume: " + resume),
+                ("human", "Job Description: " + job_desc),
+            ]
+        ats_msg = llm.invoke(ats_score_messages)
+        ats_result = ats_msg.content
+        return ats_result
+
+    except Exception as e:
+        return jsonify({'error': f"Something went wrong: {str(e)}"}), 400
 
 
 def generate_cv(resume, job_desc, context=""):
@@ -95,6 +148,7 @@ def generate_cv(resume, job_desc, context=""):
 def resume_suggest(resume, job_desc):
     """
     Reviews a resume and provides suggestions to tailor it for a job description.
+    Includes ATS score, matched skills, and missing skills.
     ```
     Request:
     {
@@ -105,25 +159,40 @@ def resume_suggest(resume, job_desc):
     Response:
     {
         status: boolean
-        data: message (Success / Error message as per status)
-
+        suggestions: string,
+        ats_content: {
+            "extracted_resume_skills": list,
+            "extracted_job_skills": list,
+            "matched_skills": list,
+            "missing_skills": list,
+            "ats_score": string
+        }
     }
     ```
     """
     try:
         if request:
-            messages = [
-                ("system", system_prompt_suggest,),
+            # Generate suggestions using LLM
+            suggestion_messages = [
+                ("system", system_prompt_suggest, ),
                 ("human", "Resume: " + resume),
                 ("human", "Job Description: " + job_desc),
             ]
-
             for f in example_files_suggest:
-                messages.append(("human", "Example Resume Suggestions: " + f))
+                suggestion_messages.append(("human", "Example Resume Suggestions: " + f))
 
-            msg = llm.invoke(messages)
-            response = msg.content
-            return jsonify({'message': "Successfully Created Resume Suggestions", 'suggestions': response}), 200
+            suggestion_msg = llm.invoke(suggestion_messages)
+            suggestions = suggestion_msg.content
+
+            # Generate ATS score using ats_score logic
+            ats_result=generate_ats_score(resume,job_desc)
+            # Return combined response
+            return jsonify({
+                "message": "Successfully Created Resume Suggestions",
+                "suggestions": suggestions,
+                "ats_content": ats_result
+            }), 200
 
     except Exception as e:
-        return jsonify({'error': "Something went wrong"}), 400
+        return jsonify({'error': f"Something went wrong: {str(e)}"}), 400
+
