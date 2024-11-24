@@ -35,16 +35,37 @@ For bash/linux - Activate the virtual environment
 ```
 source venv/bin/activate
 ```
+
 Install MongoDB
+
 Create a database in MongoDB with the name localhost:27017
+
+OR you can use Docker 
+
+
+1. Pull the MongoDB Docker Image
+```
+docker pull mongodb/mongodb-community-server:latest
+```
+
+
+2.  the Image as a Container
+```
+docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-   community-server:latest
+```
+
 ![image](https://github.com/user-attachments/assets/b9b004c2-8d59-4d5b-ac44-d2e9dd6c99ba)
 
 Install Ollama
+
 Download it from this link: [ollama download](https://ollama.com/download) 
 ```
 ollama serve
 ollama pull llama3.2
 ```
+
+Environment variables 
+
 Create the .env file by copying the .env.example file in the root directory (place it in the root directory)
 ```
 AWS_ACCESS_KEY_ID="<id>"
