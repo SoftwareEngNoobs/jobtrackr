@@ -4,10 +4,11 @@ JobTrackr. There are functions to register a new user, login an
 existing user, and logout a currently logged in user.
 """
 
-from bson import ObjectId
+from bson.objectid import ObjectId
 from flask import request, session, jsonify
 from pymongo import ReturnDocument
 import bcrypt
+import json
 
 
 def register(UserRecords):
@@ -116,3 +117,139 @@ def logout():
     '''
 
     return jsonify({'message': 'Logout successful'}), 200
+
+
+def create_profile(UserProfiles):
+    '''
+    Creates the profile of the user. 
+    Request: 
+    {
+     email: string, 
+     first_name: string,
+     last_name: string, 
+     city: string,
+     state: string,
+     country: string,
+     education: json,
+     work_ex: json,
+     skills: list,
+    }
+    '''
+    try:
+        data = request.get_json()
+        email_found = UserProfiles.find_one({"email": data["email"]})
+        if email_found:
+            return jsonify({'error': "This email already exists in database"}), 400
+        else:
+            insert_result = UserProfiles.insert_one(data)
+            return jsonify({'message': "Profile created succesfully", 'id': f'{insert_result.inserted_id}'}), 201
+    except Exception as e:
+        print(e)
+        return jsonify({'message': "Error while creating the profile"}), 500
+
+
+def view_profile(UserProfiles):
+    '''
+        Returns user profile of the user, if it exists. 
+        Request: 
+        { 
+            user_id :  string
+        }
+        Response: 
+        {
+            email: string, 
+            first_name: string,
+            last_name: string, 
+            city: string,
+            state: string,
+            country: string,
+            education: json,
+            work_ex: json,
+            skills: list,
+        }
+    '''
+    try:
+        id = request.args.get("user_id")
+        object_id = ObjectId(id)
+        result = UserProfiles.find_one(object_id)
+        # print('is anything even printing')
+        print(type(result), result)
+        result['_id'] = str(result['_id'])
+        return jsonify({'message': 'Profile found', 'profile': result}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'message': "Error while viewing the profile"}), 500
+
+
+def modify_profile(UserProfiles):
+    '''
+    Edits the profile of the user. 
+    Request: 
+    {
+     profile_id: string,
+     email: string, 
+     first_name: string,
+     last_name: string, 
+     city: string,
+     state: string,
+     country: string,
+     education: json,
+     work_ex: json,
+     skills: list,
+    }
+    '''
+    try:
+        data = request.get_json()
+        _id = data["profile_id"]
+        email = data["email"]
+        filter = {'_id': ObjectId(_id), 'email': email}
+        profile = {
+            "email": email,
+            "first_name": data["first_name"],
+            "last_name": data["last_name"],
+            "city": data["city"],
+            "state": data["state"],
+            "country": data["country"],
+            "education": data["education"],
+            "work_ex": data["work_ex"],
+            "skills": data["skills"]
+        }
+        set_data = {"$set": profile}
+        modified_profile = UserProfiles.find_one_and_update(
+            filter, set_data, return_document=ReturnDocument.AFTER)
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Unable to find profile.'}), 500
+    if modified_profile is None:
+        return jsonify({"error": "No profile found for this user"}), 404
+    else:
+        return jsonify({'message': 'User profile modified succesfully'}), 200
+
+
+def clear_profile(UserProfiles, UserRecords):
+    '''
+        Delete user profile of the user, if it exists. 
+        Request: 
+        { 
+            user_id :  string
+        }
+        Response: 
+        {
+        status: 200
+        data: Success message
+
+        status: 400
+        data: Error message
+        }
+    '''
+    try:
+        data = request.get_json()
+        _id = ObjectId(data["user_id"])
+        deleted_profile = UserProfiles.find_one_and_delete({"_id": _id})
+        if deleted_profile is None:
+            return jsonify({'error': 'User profile does not exist'}), 404
+        else:
+            return jsonify({'message': 'Profile deleted succesfully'}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Error while deleting profile'}), 500
