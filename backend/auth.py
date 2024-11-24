@@ -147,6 +147,7 @@ def create_profile(UserProfiles):
         print(e)
         return jsonify({'message': "Error while creating the profile"}), 500
 
+
 def view_profile(UserProfiles):
     '''
         Returns user profile of the user, if it exists. 
@@ -171,13 +172,14 @@ def view_profile(UserProfiles):
         id = request.args.get("user_id")
         object_id = ObjectId(id)
         result = UserProfiles.find_one(object_id)
-        #print('is anything even printing')
+        # print('is anything even printing')
         print(type(result), result)
         result['_id'] = str(result['_id'])
-        return jsonify({'message': 'Profile found', 'profile':result}), 200
+        return jsonify({'message': 'Profile found', 'profile': result}), 200
     except Exception as e:
         print(e)
         return jsonify({'message': "Error while viewing the profile"}), 500
+
 
 def modify_profile(UserProfiles):
     '''
@@ -200,27 +202,29 @@ def modify_profile(UserProfiles):
         data = request.get_json()
         _id = data["profile_id"]
         email = data["email"]
-        filter = {'_id':ObjectId(_id), 'email':email}
+        filter = {'_id': ObjectId(_id), 'email': email}
         profile = {
             "email": email,
-            "first_name":data["first_name"],
+            "first_name": data["first_name"],
             "last_name": data["last_name"],
             "city": data["city"],
-            "state":data["state"],
-            "country":data["country"],
-            "education":data["education"],
-            "work_ex":data["work_ex"],
-            "skills":data["skills"]
+            "state": data["state"],
+            "country": data["country"],
+            "education": data["education"],
+            "work_ex": data["work_ex"],
+            "skills": data["skills"]
         }
         set_data = {"$set": profile}
-        modified_profile = UserProfiles.find_one_and_update(filter, set_data, return_document=ReturnDocument.AFTER)
+        modified_profile = UserProfiles.find_one_and_update(
+            filter, set_data, return_document=ReturnDocument.AFTER)
     except Exception as e:
         print(e)
-        return jsonify({'error':'Unable to find profile.'}), 500
+        return jsonify({'error': 'Unable to find profile.'}), 500
     if modified_profile is None:
         return jsonify({"error": "No profile found for this user"}), 404
     else:
         return jsonify({'message': 'User profile modified succesfully'}), 200
+
 
 def clear_profile(UserProfiles, UserRecords):
     '''
@@ -241,11 +245,11 @@ def clear_profile(UserProfiles, UserRecords):
     try:
         data = request.get_json()
         _id = ObjectId(data["user_id"])
-        deleted_profile = UserProfiles.find_one_and_delete({"_id":_id})
+        deleted_profile = UserProfiles.find_one_and_delete({"_id": _id})
         if deleted_profile is None:
-            return jsonify({'error':'User profile does not exist'}), 404
+            return jsonify({'error': 'User profile does not exist'}), 404
         else:
-            return jsonify({'message' : 'Profile deleted succesfully'}), 200 
+            return jsonify({'message': 'Profile deleted succesfully'}), 200
     except Exception as e:
         print(e)
-        return jsonify({'error':'Error while deleting profile'}), 500 
+        return jsonify({'error': 'Error while deleting profile'}), 500
