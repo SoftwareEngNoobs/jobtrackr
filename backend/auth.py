@@ -199,8 +199,8 @@ def modify_profile(UserProfiles):
         email = data["email"]
         filter = {'email': email}
         _id = UserProfiles.find_one(filter)["_id"]
-        data["_id"]=_id
-        modified_profile = UserProfiles.replace_one({"email":email}, data)
+        data["_id"] = _id
+        modified_profile = UserProfiles.replace_one({"email": email}, data)
     except Exception as e:
         print(e)
         return jsonify({'error': 'Unable to find profile.'}), 500
