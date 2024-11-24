@@ -1,5 +1,5 @@
 name: Test-style-checker
-
+#Inactive as Autopep8 checker is used 
 on: [push]
 
 jobs:
