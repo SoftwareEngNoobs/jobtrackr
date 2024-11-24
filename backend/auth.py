@@ -153,7 +153,7 @@ def view_profile(UserProfiles):
         Returns user profile of the user, if it exists. 
         Request: 
         { 
-            user_id :  string
+            email :  string
         }
         Response: 
         {
@@ -169,11 +169,8 @@ def view_profile(UserProfiles):
         }
     '''
     try:
-        id = request.args.get("user_id")
-        object_id = ObjectId(id)
-        result = UserProfiles.find_one(object_id)
-        # print('is anything even printing')
-        print(type(result), result)
+        id = request.args.get("email")
+        result = UserProfiles.find_one({"email": str(id)})
         result['_id'] = str(result['_id'])
         return jsonify({'message': 'Profile found', 'profile': result}), 200
     except Exception as e:
@@ -186,7 +183,6 @@ def modify_profile(UserProfiles):
     Edits the profile of the user. 
     Request: 
     {
-     profile_id: string,
      email: string, 
      first_name: string,
      last_name: string, 
@@ -200,23 +196,12 @@ def modify_profile(UserProfiles):
     '''
     try:
         data = request.get_json()
-        _id = data["profile_id"]
+        # _id = data["profile_id"]
         email = data["email"]
-        filter = {'_id': ObjectId(_id), 'email': email}
-        profile = {
-            "email": email,
-            "first_name": data["first_name"],
-            "last_name": data["last_name"],
-            "city": data["city"],
-            "state": data["state"],
-            "country": data["country"],
-            "education": data["education"],
-            "work_ex": data["work_ex"],
-            "skills": data["skills"]
-        }
-        set_data = {"$set": profile}
-        modified_profile = UserProfiles.find_one_and_update(
-            filter, set_data, return_document=ReturnDocument.AFTER)
+        filter = {'email': email}
+        _id = UserProfiles.find_one(filter)["_id"]
+        data["_id"]=_id
+        modified_profile = UserProfiles.replace_one({"email":email}, data)
     except Exception as e:
         print(e)
         return jsonify({'error': 'Unable to find profile.'}), 500
