@@ -11,7 +11,7 @@ of the file.
 
 from flask import request, jsonify
 from langchain_ollama import ChatOllama
-
+import json
 llm = ChatOllama(
     model="llama3.2",
     temperature=0,
@@ -40,6 +40,7 @@ Follow these steps:
 2. Compare the extracted skills.
 3. Calculate the ATS score using this formula:
    Score (%) = (Number of Matched Skills / Total Skills in Job Description) * 100
+4.Be strict and precise in your extraction. Do not assume skills that are not clearly mentioned.
 AND STRICTLY RESPOND IN JSON  format, NOT ANYTHING EXTRA PLEASE
 Respond with a JSON output in this format:
 {
@@ -99,6 +100,13 @@ def generate_ats_score(resume, job_desc):
         ats_msg = llm.invoke(ats_score_messages)
         ats_result = ats_msg.content
 
+        data = json.loads(ats_result)
+
+        data["missing_skills"] = list(
+            set(data["extracted_job_skills"]) - set(data["matched_skills"])
+        )
+        data["ats_score"] = int(
+            len(data["matched_skills"]) / len(data["extracted_job_skills"]) * 100)
         return ats_result
 
     except Exception as e:
