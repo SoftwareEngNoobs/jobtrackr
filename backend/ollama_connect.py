@@ -107,6 +107,8 @@ def generate_ats_score(resume, job_desc):
         )
         data["ats_score"] = int(
             len(data["matched_skills"]) / len(data["extracted_job_skills"]) * 100)
+        # Convert back to string format
+        ats_result = json.dumps(data)
         return ats_result
 
     except Exception as e:
