@@ -1,5 +1,4 @@
 name: Code-Coverage-Generation
-
 on:
   push:
     branches: 
@@ -9,7 +8,6 @@ on:
     branches: 
      - main
      - release-*
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,31 +16,56 @@ jobs:
         image: mongo:latest
         ports:
           - 27017:27017
+        # Wait until MongoDB is ready
         options: >-
           --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10"]
+
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install coverage
-
-      - name: Run tests and generate coverage
-        run: |
-          python -m coverage run -m backend.tests
-          python -m coverage xml  # Ensure coverage.xml is generated
-
-      - name: Upload coverage reports to Codecov
-        run: |
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install ollama
+      run: curl -fsSL https://ollama.com/install.sh | sh
+    - name: Run ollama
+      run: |
+        ollama serve &
+        ollama pull llama3.2
+    - name: Create .env file
+      run: |
+        echo "MONGO_DB_CONNECTION=mongodb://localhost:27017/" >> .env
+        echo "DATABASE_TYPE=development" >> .env 
+        echo "APP_SECRET_KEY=testing" >> .env
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+    - name: Add folders to Python Path
+      run: |
+          echo "PYTHONPATH=backend" >> $GITHUB_ENV
+    - name: Test all
+      run: |
+        python backend/tests.py
+    - name: Code Coverage
+      run: |
+        python -m pip install coverage
+        pip install coverage-badge
+        python -m coverage run -m backend.tests
+        python -m coverage report > coverage_report.txt
+        python -m coverage xml
+        coverage-badge -o coverage.svg	        
+        percent=$(tail -1 coverage_report.txt | awk '{print $(NF)}')
+        echo "Code coverage = $percent"
+    - name: Upload coverage reports to Codecov
+      run: |
           curl -Os https://cli.codecov.io/latest/linux/codecov
           chmod +x codecov
           ./codecov --verbose upload-process --fail-on-error \
@@ -50,3 +73,8 @@ jobs:
             -n 'coverage-${{ github.run_id }}' \
             -F service \
             -f coverage.xml
+    - name: CodeCov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
+        flags: ${{ github.ref_name }}
