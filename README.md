@@ -14,7 +14,7 @@
 
 ![Open issues](https://img.shields.io/github/issues-raw/SoftwareEngNoobs/jobtrackr)
 ![Closed issues](https://img.shields.io/github/issues-closed-raw/SoftwareEngNoobs/jobtrackr?color=bright-green)
-[![Frontend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml)
+[![Frontend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml)
 [![Backend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml)
 [![Backend-Test](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml)
 [![Style-Checker](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml)
