@@ -277,7 +277,7 @@ describe('App', () => {
 		expect(getById(baseElement, 'job_desc').textContent).toBe("");
 		await new Promise((r) => setTimeout(r, 1000));
 		expect(getById(baseElement, 'job_desc_help').firstChild.textContent)
-		.toBe("Please input job description to tailor the Cover Letter!");
+		.toBe("Please input job description to tailor the Cover Letter Or Enter a URL to fetch description!");
 	});
 	test('test going to the resume rec page and opening the prompt and then closing it', async () => {
 		const { baseElement } = render(
