@@ -22,7 +22,8 @@
 
 ![Repo Size](https://img.shields.io/github/repo-size/SoftwareEngNoobs/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/SoftwareEngNoobs/jobtrackr)](https://github.com/SoftwareEngNoobs/jobtrackr/releases/)
-[![codecov](https://codecov.io/github/SoftwareEngNoobs/jobtrackr/branch/release-1.1/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/SoftwareEngNoobs/jobtrackr)
+[![codecov](https://codecov.io/github/SoftwareEngNoobs/jobtrackr/graph/badge.svg?token=NH4U7HKW8N)](https://codecov.io/github/SoftwareEngNoobs/jobtrackr)
+
 
 ---
 
