@@ -10,23 +10,23 @@
 ![Yarn](https://img.shields.io/badge/Yarn-v1.22.19-green.svg)
 ![npm](https://img.shields.io/badge/npm-v8.9.0-green.svg)
 ![Node](https://img.shields.io/badge/node-v16.15.1-green.svg)
-![Python](https://img.shields.io/badge/python-v3.8-green.svg)
+![Python](https://img.shields.io/badge/python-v3.10-green.svg)
 
-![Open issues](https://img.shields.io/github/issues-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr)
-![Closed issues](https://img.shields.io/github/issues-closed-raw/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=bright-green)
-[![Frontend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/frontend_build_test.yml)
-[![Backend-build](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/backend_build.yml)
-[![Backend-Test](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/code_coverage.yml)
-[![Style-Checker](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/style_checker.yml)
-[![Autopep8](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/autopep8.yml/badge.svg?branch=main)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/actions/workflows/autopep8.yml)
+![Open issues](https://img.shields.io/github/issues-raw/SoftwareEngNoobs/jobtrackr)
+![Closed issues](https://img.shields.io/github/issues-closed-raw/SoftwareEngNoobs/jobtrackr?color=bright-green)
+[![Frontend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml)
+[![Backend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml)
+[![Backend-Test](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml)
+[![Style-Checker](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml)
+[![Autopep8](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml)
 
-![Repo Size](https://img.shields.io/github/repo-size/CSC510-Do-Lorenc-McDavitt/jobtrackr?color=brightgreen)
-[![GitHub Release](https://img.shields.io/github/release/CSC510-Do-Lorenc-McDavitt/jobtrackr)](https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr/releases/)
-[![codecov](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr)
+![Repo Size](https://img.shields.io/github/repo-size/SoftwareEngNoobs/jobtrackr?color=brightgreen)
+[![GitHub Release](https://img.shields.io/github/release/SoftwareEngNoobs/jobtrackr)](https://github.com/SoftwareEngNoobs/jobtrackr/releases/)
+[![codecov](https://codecov.io/github/SoftwareEngNoobs/jobtrackr/branch/release-1.1/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/SoftwareEngNoobs/jobtrackr)
 
 ---
 
-### Documentation for the project is available [here](https://CSC510-Do-Lorenc-McDavitt.github.io/jobtrackr/docs/backend/index.html).
+### Documentation for the project is available [here](https://SoftwareEngNoobs/jobtrackr/docs/backend/index.html).
 
 ---
 

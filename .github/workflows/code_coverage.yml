@@ -2,9 +2,13 @@ name: Code-Coverage-Generation
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+     - main
+     - release-*
   pull_request:
-    branches: [ "main" ]
+    branches: 
+     - main
+     - release-*
 
 jobs:
   test:
@@ -65,3 +69,4 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: ${{secrets.CODECOV_TOKEN}}
+        flags: ${{ github.ref_name }}

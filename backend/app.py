@@ -12,6 +12,7 @@ import applications
 import questions
 import files
 import ollama_connect
+import jd_scraper_workday
 import os
 import time
 from files import get_pdf_info
@@ -166,7 +167,7 @@ def modify_question():
     return questions.modify_question(Questions)
 
 
-@app.route("/create_profile", methods=["post"])
+@app.route("/create_profile", methods=["POST"])
 def create_profile():
     '''
     ```
@@ -297,6 +298,19 @@ def resume_suggest():
     )
     job_desc = req["job_desc"] if "job_desc" in req.keys() else ""
     return ollama_connect.resume_suggest(resume, job_desc)
+
+
+@app.route('/get_job_description', methods=['POST'])
+def get_job_description():
+    data = request.json
+    job_url = data.get('url', '')
+    if not job_url:
+        return jsonify({"error": "URL parameter is required"}), 400
+    try:
+        description = jd_scraper_workday.get_job_description(job_url)
+        return jsonify({"description": description})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

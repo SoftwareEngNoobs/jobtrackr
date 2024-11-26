@@ -7,6 +7,7 @@ import config from '../../config';
 import AddApplication from '../AddApplication/AddApplication';
 import EditApplication from '../AddApplication/EditApplication';
 import './LandingPage.scss';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import ApplicationCard from '../AddApplication/ApplicationCard';
 
 const columns = {
@@ -23,6 +24,63 @@ export default function LandingPage() {
 	const [editApplication, setEditApplication] = useState(false);
 	const { state } = useLocation();
 
+	const quickUpdateApplications = (application, updatedValue) => {
+		axios
+			.post(`${config.base_url}/modify_application`, {
+				companyName: application.companyName,
+				jobTitle: application.jobTitle,
+				jobId: application.jobId,
+				description: application.description,
+				url: application.url,
+				date: application.date,
+				status: updatedValue,
+				image: application.image,
+				_id: application._id,
+				email: state.email,
+			})
+			.then(({ data }) => {
+				message.success(data.message);
+				refresh();
+			})
+			.catch((err) => message.error(err.response.data?.error));
+	};
+
+	const handeDragEnd = (result) => {
+		if (!result.destination) {
+			return;
+		}
+		const { source, destination } = result;
+		if (source.droppableId != destination.droppableId) {
+			var i = 0;
+			for (var app of applications) {
+				if (app._id == result.draggableId) {
+					if (destination.droppableId == '0') {
+						app.status = 'applied';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'applied');
+					} else if (destination.droppableId == '1') {
+						app.status = 'inReview';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'inReview');
+					} else if (destination.droppableId == '2') {
+						app.status = 'interview';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'interview');
+					} else {
+						app.status = 'accepted';
+						applications[i] = app;
+						setApplications(applications);
+						quickUpdateApplications(app, 'accepted');
+					}
+				}
+				i += 1;
+			}
+		}
+	};
+
 	useEffect(() => {
 		updateApplications();
 	}, []);
@@ -36,7 +94,6 @@ export default function LandingPage() {
 	};
 
 	const toggleAddApplication = () => setAddApplicationOpen(!addApplicationOpen);
-
 	return (
 		<div className="LandingPage">
 			<div className="SubHeader">
@@ -58,30 +115,62 @@ export default function LandingPage() {
 			</div>
 
 			<div className="MainContent">
-				{Object.keys(columns).map((col) => (
-					<div className="Status" key={col}>
-						<Typography.Title level={5}>{columns[col]}</Typography.Title>
-						{loading ? (
-							<>
-								<Card loading bordered={false} />
-								<Card loading bordered={false} />
-								<Card loading bordered={false} />
-							</>
-						) : (
-							applications.map(
-								(application, index) =>
-									(application.status === col ||
-										(col === 'decision' &&
-											['rejected', 'accepted'].includes(
-												application.status
-											))) && (
-										<ApplicationCard key={col + index} application={application} modalFunc={setEditApplication} refresh={updateApplications} email={state.email} />
-									)
-							)
-						)}
-						{applications.length === 0 && 'No applications found.'}
-					</div>
-				))}
+				<DragDropContext onDragEnd={handeDragEnd}>
+					{Object.keys(columns).map((col, index) => (
+						<Droppable droppableId={String(index)} key={index}>
+							{(provided) => (
+								<div
+									className="Status"
+									key={col}
+									{...provided.droppableProps}
+									ref={provided.innerRef}
+								>
+									<Typography.Title level={5}>{columns[col]}</Typography.Title>
+									{loading ? (
+										<>
+											<Card loading bordered={false} />
+											<Card loading bordered={false} />
+											<Card loading bordered={false} />
+										</>
+									) : (
+										applications.map(
+											(application, index) =>
+												(application.status === col ||
+													(col === 'decision' &&
+														['rejected', 'accepted'].includes(
+															application.status
+														))) && (
+													<Draggable
+														key={application._id}
+														draggableId={application._id}
+														index={index}
+													>
+														{(provided) => (
+															<div
+																{...provided.draggableProps}
+																ref={provided.innerRef}
+																{...provided.dragHandleProps}
+															>
+																<ApplicationCard
+																	key={col + index}
+																	application={application}
+																	modalFunc={setEditApplication}
+																	refresh={updateApplications}
+																	email={state.email}
+																/>
+															</div>
+														)}
+													</Draggable>
+												)
+										)
+									)}
+									{applications.length === 0 && 'No applications found.'}
+									{provided.placeholder}
+								</div>
+							)}
+						</Droppable>
+					))}
+				</DragDropContext>
 			</div>
 			{editApplication && (
 				<EditApplication
