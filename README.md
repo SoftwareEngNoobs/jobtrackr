@@ -17,8 +17,8 @@
 [![Frontend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml/badge.svg?branch=main)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/frontend_build_test.yml)
 [![Backend-build](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/backend_build.yml)
 [![Backend-Test](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/code_coverage.yml)
-[![Style-Checker](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml/badge.svg?branch=main)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml)
-[![Autopep8](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml/badge.svg?branch=main)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml)
+[![Style-Checker](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/style_checker.yml)
+[![Autopep8](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml/badge.svg)](https://github.com/SoftwareEngNoobs/jobtrackr/actions/workflows/autopep8.yml)
 
 ![Repo Size](https://img.shields.io/github/repo-size/SoftwareEngNoobs/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/SoftwareEngNoobs/jobtrackr)](https://github.com/SoftwareEngNoobs/jobtrackr/releases/)
