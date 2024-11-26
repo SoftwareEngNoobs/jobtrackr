@@ -182,10 +182,16 @@ git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
 - Host the application on AWS EC2
 - Web Scraper for Job Descriptions from Indeed
 - Markdown formatting for notes
+- Migrate from jest testing framework to vitest
 
 ## Contributors
 
 <table>
+  <tr>
+ <td align="center"><a href="https://github.com/mahimdashora"><img src="https://avatars.githubusercontent.com/u/60029463?v=4" width="100px;" alt=""/><br /><sub><b>Mahim Dashora</b></sub></a></td>
+<td align="center"><a href="https://github.com/VarunMK"><img src="https://avatars.githubusercontent.com/u/52526572?v=4" width="100px;" alt=""/><br /><sub><b>Varun MK</b></sub></a></td>
+<td align="center"><a href="https://github.com/kr1k-boop"><img src="https://avatars.githubusercontent.com/u/71825347?v=4" width="100px;" alt=""/><br /><sub><b>Krithika Ragothaman</b></sub></a></td>
+  </tr>
 <tr>
     <td align="center"><a href="https://github.com/Kethly"><img src="https://avatars.githubusercontent.com/u/57457270?v=4" width="100px;" alt=""/><br /><sub><b>Thien Do</b></sub></a></td>
     <td align="center"><a href="https://github.com/Nlorenc2760"><img src="https://avatars.githubusercontent.com/u/99928198?s=400&u=cc7ab1019415d06c72c81840ed406675c4b0af2a&v=4" width="100px;" alt=""/><br /><sub><b>Nathan Lorenc</b></sub></a></td>
