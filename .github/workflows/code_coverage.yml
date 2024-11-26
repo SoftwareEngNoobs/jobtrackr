@@ -1,4 +1,5 @@
 name: Code-Coverage-Generation
+
 on:
   push:
     branches: 
@@ -8,6 +9,7 @@ on:
     branches: 
      - main
      - release-*
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -60,21 +62,10 @@ jobs:
         pip install coverage-badge
         python -m coverage run -m backend.tests
         python -m coverage report > coverage_report.txt
-        python -m coverage xml
         coverage-badge -o coverage.svg	        
         percent=$(tail -1 coverage_report.txt | awk '{print $(NF)}')
         echo "Code coverage = $percent"
-    - name: Upload coverage reports to Codecov
-      run: |
-          curl -Os https://cli.codecov.io/latest/linux/codecov
-          chmod +x codecov
-          ./codecov --verbose upload-process --fail-on-error \
-            -t ${{ secrets.CODECOV_TOKEN }} \
-            -n 'coverage-${{ github.run_id }}' \
-            -F service \
-            -f coverage.xml
     - name: CodeCov
       uses: codecov/codecov-action@v3
       with:
         token: ${{secrets.CODECOV_TOKEN}}
-        flags: ${{ github.ref_name }}
