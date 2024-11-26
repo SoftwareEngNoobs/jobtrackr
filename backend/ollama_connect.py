@@ -163,12 +163,17 @@ def resume_suggest(resume, job_desc):
 
             # Generate ATS score using ats_score logic
             ats_result = generate_ats_score(resume, job_desc)
+            ats_data = json.loads(ats_result)
+            num_matched = len(ats_data["matched_skills"])
+            num_missed = len(ats_data["missing_skills"])
 
             # Return combined response
             return jsonify({
                 "message": "Successfully Created Resume Suggestions",
                 "suggestions": suggestions,
-                "ats_content": ats_result
+                "matched_skills": ats_data["matched_skills"],
+                "missing_skills": ats_data["missing_skills"],
+                "ats_content": round((num_matched/(num_matched+num_missed))*100)
             }), 200
     except Exception as e:
         return jsonify({'error': f"Something went wrong: {str(e)}"}), 400
