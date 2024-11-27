@@ -138,7 +138,7 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 
 ## Application Demo
 
-[![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/pfs38jh5hPs)
+[![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/9xIDV6a-Prs)
 
 
 ## Getting Started - Developer
@@ -154,7 +154,7 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 1. Clone the repository
 
 ```
-git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
+git clone https://github.com/SoftwareEngNoobs/jobtrackr.git
 ```
 
 2. [Backend Setup](./backend/README-backend.md)
