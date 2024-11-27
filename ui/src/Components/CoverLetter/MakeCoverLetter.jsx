@@ -10,7 +10,6 @@ export default function MakeCoverLetter({ isOpen, onClose, updateCoverLetter }) 
 	const { state } = useLocation();
 	const [loadingDownload, setLoadingDownload] = useState(false);
 	const [files, setFiles] = useState([]);
-	const [workdayLink, setWorkdayLink] = useState(true);
 	const [selectedFile, setSelectedFile] = useState('');
 	useEffect(() => {
 		updateFiles();
@@ -132,27 +131,13 @@ export default function MakeCoverLetter({ isOpen, onClose, updateCoverLetter }) 
 					name="job_desc"
 					rules={[
 						{
-							required: workdayLink,
+							required: true,
 							message:
-								'Please input job description to tailor the Cover Letter Or Enter a URL to fetch description!',
+								'Please input job description to tailor the Cover Letter!',
 						},
 					]}
 				>
 					<Input.TextArea placeholder="Job Description" disabled={loadingDownload} />
-				</Form.Item>
-				<Divider>Or</Divider>
-				<Form.Item label="Workday Job Link (Fetch Job Description)" name="job_link">
-					<Input
-						placeholder="Workday Job Link"
-						disabled={loadingDownload}
-						onChange={(result) => {
-							if (result.target.value.length > 0) {
-								setWorkdayLink(false);
-							} else {
-								setWorkdayLink(true);
-							}
-						}}
-					/>
 				</Form.Item>
 			</Form>
 		</Modal>
