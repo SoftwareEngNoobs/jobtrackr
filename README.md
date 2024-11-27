@@ -71,6 +71,18 @@ Continuous Integration
 * Deployment was done through GitHub Actions. With Jenkins, Ansible, and GitHub webhooks.
 
 ### After
+
+Drag and Drop Kanban Board
+* Our portal has an interactive drag-and-drop kanban board allowing users to keep track of their applications.
+
+ATS Score and Skills Generator
+* Users now have the option to use their resume to generate an ATS score and find all the skills missing from their profile.
+
+User Profile page
+* Users can now create a profile page to store their relevant work experience and eduction details for easy access.
+
+* Support for Markdown Formatting for Notes
+
 Extra files not stored in backend
 * Previously, when files from AWS S3 were sent to the user, they would be downloaded and kept in the backend directory as a side consequence. We have updated it so that the these files will not clog up our repository
 
@@ -138,7 +150,9 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 
 ## Application Demo
 
-[![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/9xIDV6a-Prs)
+
+[![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/R8ipW5EXBDE)
+
 
 
 ## Getting Started - Developer
@@ -177,11 +191,11 @@ git clone https://github.com/SoftwareEngNoobs/jobtrackr.git
 - [Llama3.2](https://ollama.com/library/llama3.2)
 
 ## Future Milestones
-- Drag and Drop Kanban Board
-- Upload Generated Cover Letters
-- Host the application on AWS EC2
-- Web Scraper for Job Descriptions from Indeed
-- Markdown formatting for notes
+- Scrape Job Description from website link
+- Chrome Extension to Auto-Fill Applications
+- Networking Integration
+- Automated Application Reminders
+- UI Improvements
 - Migrate from jest testing framework to vitest
 
 ## Contributors
