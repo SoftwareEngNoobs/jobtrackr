@@ -22,7 +22,7 @@
 
 ![Repo Size](https://img.shields.io/github/repo-size/SoftwareEngNoobs/jobtrackr?color=brightgreen)
 [![GitHub Release](https://img.shields.io/github/release/SoftwareEngNoobs/jobtrackr)](https://github.com/SoftwareEngNoobs/jobtrackr/releases/)
-[![codecov](https://codecov.io/github/SoftwareEngNoobs/jobtrackr/branch/release-1.1/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/SoftwareEngNoobs/jobtrackr)
+[![codecov](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/CSC510-Do-Lorenc-McDavitt/jobtrackr)
 
 
 ---
@@ -150,7 +150,9 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 
 ## Application Demo
 
+
 [![JobTrackr App Demo](https://img.youtube.com/vi/pfs38jh5hPs/maxresdefault.jpg)](https://youtu.be/R8ipW5EXBDE)
+
 
 
 ## Getting Started - Developer
@@ -166,7 +168,7 @@ Note: This repository is configured with [Dart-sass](https://github.com/sass/dar
 1. Clone the repository
 
 ```
-git clone https://github.com/CSC510-Do-Lorenc-McDavitt/jobtrackr.git
+git clone https://github.com/SoftwareEngNoobs/jobtrackr.git
 ```
 
 2. [Backend Setup](./backend/README-backend.md)

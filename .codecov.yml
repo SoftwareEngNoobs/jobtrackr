@@ -1,0 +1,10 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 60%
+        threshold: null
+    patch: false
+    changes: false
+codecov:
+  max_report_age: off
